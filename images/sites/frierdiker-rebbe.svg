@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8dfd0" />
+      <stop offset="100%" stop-color="#4a3828" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <rect x="48" y="48" width="1104" height="704" fill="none" stroke="#9e8060" stroke-width="2" rx="4"/>
+  <text x="600" y="360" font-family="Playfair Display, serif" font-size="52" text-anchor="middle" fill="#f5efe4">Rabbi Yosef Yitzchak Schneersohn</text>
+  <text x="600" y="430" font-family="Playfair Display, serif" font-size="34" text-anchor="middle" fill="#c8b89a">The Frierdiker Rebbe · 1880–1950</text>
+  <text x="600" y="490" font-family="Playfair Display, serif" font-size="26" text-anchor="middle" fill="#a08060">Born in Lubavitch · Delivered last Maamar in Russia here, 1922</text>
+</svg>

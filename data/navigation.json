@@ -1,0 +1,12 @@
+[
+  {"title": "Home", "href": "/"},
+  {"title": "History", "href": "/history/"},
+  {"title": "Rabbi Gordon", "href": "/rabbi-gavriel-gordon/"},
+  {"title": "Sacred Sites", "href": "/sacred-sites/"},
+  {"title": "Restoration", "href": "/restoration/"},
+  {"title": "Gallery", "href": "/gallery/"},
+  {"title": "News", "href": "/news/"},
+  {"title": "Visit", "href": "/visit/"},
+  {"title": "Archive", "href": "/archive/"},
+  {"title": "Contact", "href": "/contact/"}
+]

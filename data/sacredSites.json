@@ -1,0 +1,72 @@
+[
+  {
+    "id": "ohel-rebbeim",
+    "slug": "ohel-rebbeim",
+    "title": "Ohel of the Tzemach Tzedek and Rebbe Maharash",
+    "image": "/images/sites/ohel-founders-1.jpg",
+    "description": "The Ohel of the Rebbeim is the central and most sacred site in Lubavitch. Here rest Rabbi Menachem Mendel Schneersohn — the Tzemach Tzedek (1789–1866) — and his son Rabbi Shmuel Schneersohn, the Rebbe Maharash (1834–1882). Built without a roof at the Tzemach Tzedek's own request, the Ohel was damaged in World War II and rebuilt in 1989. It was most recently renovated in 2023–2024 by Rabbi Gavriel Gordon's team. Thousands of visitors travel to Lubavitch each year to pray at the Ohel.",
+    "significance": "The burial place of the third and fourth Chabad Rebbeim. One of the most significant pilgrimage destinations in the Chabad-Lubavitch world.",
+    "status": "Restored and active",
+    "category": "Ohel"
+  },
+  {
+    "id": "historic-cemetery",
+    "slug": "historic-cemetery",
+    "title": "The Historic Jewish Cemetery",
+    "image": "/images/sites/ohel-founders-2.jpg",
+    "description": "Located at the western edge of the village near the river, the Lubavitch cemetery spans approximately 70 by 150 meters and contains the graves of Rebbeim, Rebbetzins, community leaders, and generations of Jewish families. Before World War II, hundreds of matzeivos stood here. The Nazi occupation and subsequent Soviet neglect left many buried and broken. Since 2018, the Geder Avos project in partnership with Rabbi Gavriel Gordon has uncovered and reinstalled hundreds of tombstones. A full database of every grave has been compiled.",
+    "significance": "Burial ground of Chabad Rebbeim, Rebbetzins, and the Jewish community of Lubavitch spanning over 150 years.",
+    "status": "Active restoration — major project ongoing",
+    "category": "Cemetery"
+  },
+  {
+    "id": "rebbetzins-ohel",
+    "slug": "rebbetzins-ohel",
+    "title": "Ohel of the Rebbetzins",
+    "image": "/images/sites/ohel-founders-3.jpg",
+    "description": "A separate Ohel honoring the Rebbetzins — the wives and daughters of the Chabad Rebbeim — was rebuilt as part of the modern restoration project. The Geder Avos organization, working with Rabbi Gavriel Gordon, constructed a new structure over the resting places of these women who were central figures in the life of the Chabad court. The site reflects the full story of Lubavitch: not only the Rebbeim, but their families and the women who shaped chassidic life.",
+    "significance": "Honors the female leaders and family members of the Chabad Rebbeim whose contributions are central to the movement's history.",
+    "status": "Rebuilt and maintained",
+    "category": "Ohel"
+  },
+  {
+    "id": "tomchei-temimim",
+    "slug": "tomchei-temimim",
+    "title": "Site of Tomchei Temimim Yeshiva",
+    "image": "/images/hero/village-aerial.jpg",
+    "description": "Yeshivah Tomchei Temimim Lubavitch was established in the summer of 1897 by the fifth Rebbe, Rabbi Sholom Dovber Schneersohn (the Rebbe Rashab). It was the first yeshiva of its kind — combining intensive Talmud study with the deep study of Chassidus. The yeshiva trained a generation of Chabad leaders and emissaries. When the Rebbe evacuated in 1915 due to World War I, the central yeshiva dispersed, but branches continued across Russia and the world. The site in Lubavitch where the original yeshiva stood is part of the historic Rebbe's courtyard complex.",
+    "significance": "The founding campus of Tomchei Temimim, the yeshiva that produced generations of Chabad leaders and defined Chabad education worldwide.",
+    "status": "Documented and part of ongoing site recovery",
+    "category": "Historic Buildings"
+  },
+  {
+    "id": "historic-beis-midrash",
+    "slug": "historic-beis-midrash",
+    "title": "The Akeda Shul (Historic Study Hall)",
+    "image": "/images/sites/schneerson-house.jpg",
+    "description": "The Akeda Shul — also called the Beis Medrash — is a synagogue that bordered the Ohel of the Tzemach Tzedek and Rebbe Maharash. Its foundation was rediscovered during restoration work in 2018. The shul had red bricks similar in style to 770 Eastern Parkway and featured wooden floors and a roof. After a four-year rebuilding project coordinated by Rabbi Gavriel Gordon, the Shul was returned to full functionality with an Aron Kodesh, Bima, library, and prayer and study spaces. The last Maamar delivered in Russia by the Frierdiker Rebbe in 1922 was spoken from within this shul.",
+    "significance": "The synagogue bordering the Ohel, where the Frierdiker Rebbe delivered his final Maamar in Russia in 1922. Rebuilt and fully functional as of the early 2020s.",
+    "status": "Rebuilt — fully functional",
+    "category": "Historic Buildings"
+  },
+  {
+    "id": "rebbeims-courtyard",
+    "slug": "rebbeims-courtyard",
+    "title": "Chatzer Lubavitch — The Rebbe's Courtyard",
+    "image": "/images/sites/schneerson-house.jpg",
+    "description": "The Chatzer (courtyard) of Lubavitch served as the seat of Chabad-Lubavitch for 102 years, from the arrival of the Mitteler Rebbe in 1813 until the Rebbe Rashab's departure in 1915. The complex included the residences of the Rebbeim, the main shul and beis medrash, the yeshiva, and the surrounding grounds. A 1912 architectural blueprint discovered in recent years revealed unknown details about the brick houses built within the compound. Today, an information center — Hatzer Raboteinu Nesieinu Belubavitch — opened in 2008 on this site, and parts of the original structures have been restored.",
+    "significance": "For over a century, the Chatzer was the physical and spiritual home of the Chabad-Lubavitch movement.",
+    "status": "Partially restored — museum and information center open",
+    "category": "Landscape"
+  },
+  {
+    "id": "old-streets",
+    "slug": "old-streets",
+    "title": "Streets and Landscape of Lubavitch",
+    "image": "/images/hero/village-aerial.jpg",
+    "description": "The village of Lubavitch is set in the Smolensk forest region near the border of Belarus, close to the Berezina and Khuditsa rivers. At its peak in the 19th century, the town had 1,516 inhabitants, 978 of whom were Jewish — two Orthodox churches, two synagogues, and a market. The original wooden shtetl structures were largely destroyed; many were dismantled during the Soviet period. Plans are underway, based on archived maps and blueprints, to restore a portion of the original shtetl streetscape. The landscape itself — the forest paths, the river, the open fields — preserves the memory of the world that existed here.",
+    "significance": "The physical landscape of Lubavitch holds the living memory of the shtetl that shaped one of the largest Jewish movements in the world.",
+    "status": "Accessible — streetscape restoration planned",
+    "category": "Landscape"
+  }
+]

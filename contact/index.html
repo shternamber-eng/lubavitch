@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+Pro:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/main.js"></script>
+  <meta name="description" content="Contact form for sharing photographs, documents, family stories, or project support related to Lubavitch restoration and archive work." />
+  <title>Contact Lubavitch Archive Project | Share Materials or Support</title>
+</head>
+<body data-page="contact">
+  <header class="header" role="banner">
+    <div class="page header-inner">
+      <a class="brand" href="/">
+        <strong>Lubavitch Heritage</strong>
+        <small>Historic archive & restoration project</small>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+      <nav id="site-navigation" role="navigation">
+        <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/history/">History</a></li>
+          <li><a href="/rabbi-gavriel-gordon/">Rabbi Gordon</a></li>
+          <li><a href="/sacred-sites/">Sacred Sites</a></li>
+          <li><a href="/restoration/">Restoration</a></li>
+          <li><a href="/gallery/">Gallery</a></li>
+          <li><a href="/news/">News</a></li>
+          <li><a href="/visit/">Visit</a></li>
+          <li><a href="/archive/">Archive</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+
+    <section class="section">
+      <div class="section-title"><h1>Contact / Get Involved</h1></div>
+      <p class="section-intro">If you have photographs, documents, stories, maps, or memories connected to Lubavitch, we invite you to share them. Every fragment matters.</p>
+    </section>
+    <section class="section grid grid-2">
+      <article class="card"><h3 class="card-strong">How to Reach Us</h3><p>Use this form to tell us about archive material, a possible visit, or support for restoration work. Personal contact details are collected respectfully.</p></article>
+      <article class="card"><h3 class="card-strong">What We Seek</h3><p>Photographs, documents, family stories, maps, oral memories, and research notes that help preserve Lubavitch history.</p></article>
+    </section>
+    <section class="section">
+      <form class="contact-form" action="mailto:project@lubavitch-archive.org" method="post" enctype="text/plain">
+        <label>Full Name<input type="text" name="name" required /></label>
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Country<input type="text" name="country" /></label>
+        <label>Organization<input type="text" name="organization" /></label>
+        <label>Reason for Contact<select name="reason">
+          <option value="visit">I want to visit Lubavitch</option>
+          <option value="photographs">I have historical photographs</option>
+          <option value="documents">I have documents or family stories</option>
+          <option value="support">I want to support the restoration</option>
+          <option value="institution">I represent a community or institution</option>
+          <option value="research">I want to help with research</option>
+          <option value="other">Other</option>
+        </select></label>
+        <label>Message<textarea name="message" rows="6"></textarea></label>
+        <div class="form-actions"><button class="btn" type="submit">Send a Message</button></div>
+      </form>
+      <div class="note-block">This is a placeholder contact form. Real upload handling and backend integration can be added later with Formspree, Netlify Forms, or another platform.</div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="page footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h3>Lubavitch Heritage Restoration</h3>
+          <p>A respectful historical archive for Lubavitch / Lyubavichi and the ongoing work to preserve its sacred Jewish sites.</p>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <a href="/history/">History</a><br />
+          <a href="/restoration/">Restoration</a><br />
+          <a href="/gallery/">Gallery</a><br />
+          <a href="/contact/">Contact</a>
+        </div>
+        <div>
+          <h3>Note</h3>
+          <p>This website is an independent historical and informational project. Historical details should be verified with official representatives before citation or publication.</p>
+        </div>
+      </div>
+      <div class="footer-note">© Lubavitch Historical Archive Project</div>
+    </div>
+  </footer>
+</body>
+</html>
