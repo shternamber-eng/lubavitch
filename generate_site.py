@@ -25,7 +25,6 @@ base_head = '''<!DOCTYPE html>
         <ul class="nav-list">
           <li><a href="/">Home</a></li>
           <li><a href="/history/">History</a></li>
-          <li><a href="/rabbi-gavriel-gordon/">Rabbi Gordon</a></li>
           <li><a href="/sacred-sites/">Sacred Sites</a></li>
           <li><a href="/restoration/">Restoration</a></li>
           <li><a href="/gallery/">Gallery</a></li>
@@ -217,6 +216,19 @@ pages = [
     <section class="section grid grid-2">
       <article class="image-card"><img src="/images/gallery/ohel-renovation-2024.svg" alt="Ohel renovation example" loading="lazy"><div class="image-card-body"><p>Before / after imagery for the Ohel can be added here as the archive grows.</p></div></article>
       <article class="image-card"><img src="/images/gallery/cemetery-restoration.svg" alt="Cemetery restoration example" loading="lazy"><div class="image-card-body"><p>Visual documentation supports each restoration phase in a respectful way.</p></div></article>
+    </section>
+    <section class="section">
+      <div class="section-title"><h2>About the Project</h2></div>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3 class="card-strong">Local Leadership</h3>
+          <p>The restoration work is led on the ground by the local Chabad emissary in Lubavitch, who is responsible for day-to-day care of the Ohel, the cemetery, and all sacred sites. His work includes receiving visitors and pilgrimage groups, coordinating restoration phases, maintaining the Akeda Shul, and managing the ongoing archive and documentation effort.</p>
+        </article>
+        <article class="card">
+          <h3 class="card-strong">Partners &amp; Sponsors</h3>
+          <p>The project operates in partnership with Geder Avos, the organization responsible for the cemetery restoration and burial database. Major restoration phases have been made possible through the generous support of Yosef and Penina Batsheva Popack and donors from the broader Chabad community worldwide.</p>
+        </article>
+      </div>
     </section>
     <section class="section cta-panel">
       <h2>Current Needs</h2>
