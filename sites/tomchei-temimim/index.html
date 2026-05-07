@@ -3,11 +3,129 @@
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" /><script defer src="/assets/js/main.js"></script>
   <meta name="description" content="Yeshivas Tomchei Temimim — founded in Lubavitch in 1897 by the Rebbe Rashab. The first yeshiva to unite Talmud and Chassidus. Now operating worldwide." />
   <title>Yeshivas Tomchei Temimim | Lubavitch Heritage</title>
   <script>(function(){var l=localStorage.getItem('lang')||'en';document.documentElement.dataset.lang=l;})();</script>
+  <style>
+    .tomchei-hero-img {
+      width: 100%;
+      height: 64vh;
+      min-height: 400px;
+      max-height: 700px;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+      filter: sepia(0.55) contrast(1.1) brightness(0.88);
+    }
+    .tomchei-hero-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent 0%, rgba(14, 10, 6, 0.88) 100%);
+      padding: 4rem 2rem 2rem;
+      color: var(--paper);
+    }
+    .tomchei-eyebrow {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 228, 0.65);
+      margin-bottom: 0.6rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .tomchei-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: rgba(245, 240, 228, 0.5);
+      vertical-align: middle;
+    }
+    .tomchei-hero-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.02;
+      color: var(--paper);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+    .tomchei-hero-sub {
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(245, 240, 228, 0.8);
+      max-width: 60ch;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .tomchei-hero-btns {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .tomchei-photo-credit {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: rgba(245, 240, 228, 0.45);
+      text-transform: uppercase;
+    }
+    .founding-portrait {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .founding-portrait-img {
+      width: 180px;
+      flex-shrink: 0;
+      filter: sepia(0.4) contrast(1.05);
+      border: 3px solid var(--border);
+    }
+    .founding-portrait-text { flex: 1; min-width: 220px; }
+    .founding-portrait-caption {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.5rem;
+      font-style: normal;
+    }
+    .highlight-box {
+      border-left: 4px solid var(--red);
+      padding: 1rem 1.25rem;
+      background: rgba(122, 26, 26, 0.04);
+      margin: 1.25rem 0;
+    }
+    .highlight-box p {
+      font-style: italic;
+      color: var(--ink-mid);
+      margin: 0;
+    }
+    .worldwide-intro {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 72ch;
+      margin: 0 0 2rem;
+      color: var(--ink-mid);
+    }
+    @media (max-width: 560px) {
+      .tomchei-hero-img { height: 52vh; min-height: 300px; }
+      .tomchei-hero-overlay { padding: 2rem 1.25rem 1.5rem; }
+      .founding-portrait-img { width: 120px; }
+    }
+  </style>
 </head>
 <body data-page="sacred-sites">
   <div class="lang-bar"><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button></div>
@@ -34,81 +152,126 @@
     </nav>
   </header>
 
+  <!-- HERO PHOTO — historical yeshiva image with Rebbe Rashab -->
+  <div class="hero" style="border-bottom: 4px solid var(--border);">
+    <img class="tomchei-hero-img" src="/images/sites/tomchei-hero.jpg"
+         alt="Students of Tomchei Temimim at study, with the Rebbe Rashab" />
+    <span class="tomchei-photo-credit">
+      <span class="en">Historical archive · c. 1900–1915</span>
+      <span class="ru">Исторический архив · ок. 1900–1915</span>
+    </span>
+    <div class="tomchei-hero-overlay">
+      <div class="wrap">
+        <p class="tomchei-eyebrow">
+          <span class="en">Founded Lubavitch, 1897 · Now worldwide</span>
+          <span class="ru">Основана в Любавиче, 1897 · Сегодня по всему миру</span>
+        </p>
+        <h1 class="tomchei-hero-title">
+          <span class="en">Yeshivas Tomchei Temimim</span>
+          <span class="ru">Ешива Томхей Тмимим</span>
+        </h1>
+        <p class="tomchei-hero-sub">
+          <span class="en">The first institution in Jewish history to unite intensive Talmud scholarship with the deep study of Chassidus — founded by the Rebbe Rashab in Lubavitch.</span>
+          <span class="ru">Первое учебное заведение в еврейской истории, объединившее интенсивное изучение Талмуда с глубоким изучением хасидизма — основана Ребе Рашабом в Любавиче.</span>
+        </p>
+        <div class="tomchei-hero-btns">
+          <a class="btn" href="#founding" style="border-color:rgba(245,240,228,0.6);color:var(--paper);">
+            <span class="en">Read the History</span><span class="ru">История ешивы</span>
+          </a>
+          <a class="btn btn-fill" href="#worldwide">
+            <span class="en">Worldwide Today</span><span class="ru">Сеть сегодня</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main class="wrap">
 
-    <!-- TITLE -->
-    <section class="section">
-      <h4><span class="en">Founded Lubavitch, 1897</span><span class="ru">Основана в Любавиче, 1897</span></h4>
-      <h1>
-        <span class="en">Yeshivas Tomchei Temimim</span>
-        <span class="ru">Ешива Томхей Тмимим</span>
-      </h1>
-      <p class="lead">
-        <span class="en">Founded in Lubavitch in 1897 by the fifth Lubavitcher Rebbe — Rabbi Shalom DovBer Schneersohn — Yeshivas Tomchei Temimim was the first institution in Jewish history to systematically unite intensive Talmud scholarship with the deep study of Chassidus. Over 125 years later, it operates in dozens of countries on six continents.</span>
-        <span class="ru">Основанная в Любавиче в 1897 году пятым Любавичским Ребе — Рабби Шолом Довбер Шнеерсоном — ешива Томхей Тмимим стала первым учебным заведением в еврейской истории, систематически объединившим интенсивное изучение Талмуда с глубоким изучением хасидизма. Более 125 лет спустя она действует в десятках стран на шести континентах.</span>
-      </p>
-    </section>
-
-    <!-- KEY FACTS -->
+    <!-- STATS -->
     <section class="section">
       <div class="stats-bar">
         <div class="stat-cell">
           <span class="stat-n">1897</span>
-          <span class="stat-l"><span class="en">Year founded in Lubavitch</span><span class="ru">Год основания в Любавиче</span></span>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-n">100+</span>
-          <span class="stat-l"><span class="en">Countries with Tomchei Temimim branches</span><span class="ru">Стран с отделениями ешивы</span></span>
-        </div>
-        <div class="stat-cell">
-          <span class="stat-n">5657</span>
-          <span class="stat-l"><span class="en">Year founded in the Hebrew calendar</span><span class="ru">Год основания по еврейскому летоисчислению</span></span>
+          <span class="stat-l"><span class="en">Founded in Lubavitch</span><span class="ru">Год основания</span></span>
         </div>
         <div class="stat-cell">
           <span class="stat-n">127</span>
-          <span class="stat-l"><span class="en">Years of unbroken Torah study</span><span class="ru">Лет непрерывного изучения Торы</span></span>
+          <span class="stat-l"><span class="en">Years of unbroken Torah study</span><span class="ru">Лет непрерывной учёбы</span></span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-n">100+</span>
+          <span class="stat-l"><span class="en">Countries with active branches</span><span class="ru">Стран с отделениями</span></span>
+        </div>
+        <div class="stat-cell">
+          <span class="stat-n">5657</span>
+          <span class="stat-l"><span class="en">Year of founding (Hebrew calendar)</span><span class="ru">Год основания по еврейскому летоисчислению</span></span>
         </div>
       </div>
     </section>
 
-    <!-- PHOTO -->
+    <!-- LEAD -->
     <section class="section">
-      <figure class="figure">
-        <img src="/images/sites/tomchei-temimim.svg" alt="The site of the original Tomchei Temimim yeshiva in Lubavitch" loading="lazy" />
-        <figcaption>
-          <span class="en">The site of the original Tomchei Temimim yeshiva in Lubavitch — the place where a revolution in Jewish education began in 1897.</span>
-          <span class="ru">Место оригинальной ешивы Томхей Тмимим в Любавиче — место, где в 1897 году началась революция в еврейском образовании.</span>
-        </figcaption>
-      </figure>
+      <p class="lead">
+        <span class="en">Founded in Lubavitch in 1897 by the fifth Lubavitcher Rebbe — Rabbi Shalom DovBer Schneersohn — Yeshivas Tomchei Temimim was a revolution in Jewish education. It was the first yeshiva to treat Torah study and Chassidic philosophy as equally obligatory pillars of a single education. Over 127 years later, it operates in dozens of countries on six continents — and it all began in a small building in a village in western Russia.</span>
+        <span class="ru">Основанная в Любавиче в 1897 году пятым Любавичским Ребе — Рабби Шолом Довбер Шнеерсоном — ешива Томхей Тмимим стала революцией в еврейском образовании. Это была первая ешива, которая рассматривала изучение Торы и хасидскую философию как одинаково обязательные столпы единого образования. Более 127 лет спустя она действует в десятках стран на шести континентах — и всё это началось в небольшом здании в деревне в западной России.</span>
+      </p>
     </section>
 
     <!-- FOUNDING -->
-    <section class="section">
+    <section class="section" id="founding">
       <div class="section-hd">
         <h2><span class="en">The Founding</span><span class="ru">Основание</span></h2>
-        <span class="section-label"><span class="en">1897 · Lubavitch</span><span class="ru">1897 · Любавич</span></span>
+        <span class="section-label"><span class="en">1897 · Lubavitch, Russia</span><span class="ru">1897 · Любавич, Россия</span></span>
       </div>
-      <div class="col-2 ruled">
+
+      <!-- Rebbe Rashab portrait + text -->
+      <div class="founding-portrait" style="margin-bottom:2rem;">
         <div>
-          <h3><span class="en">A Revolutionary Concept</span><span class="ru">Революционная идея</span></h3>
-          <p>
-            <span class="en">Before Tomchei Temimim, yeshivas in Eastern Europe focused almost exclusively on Talmud and halachic study. The world of Chassidus — its philosophy, its meditative practices, its emotional devotion — was largely learned outside the walls of formal education, if at all.</span>
-            <span class="ru">До Томхей Тмимим ешивы в Восточной Европе сосредотачивались почти исключительно на изучении Талмуда и галахи. Мир хасидизма — его философия, медитативные практики, эмоциональная преданность — в основном изучался вне стен формального образования, если вообще изучался.</span>
-          </p>
-          <p>
-            <span class="en">The Rebbe Rashab broke with this model entirely. He created a yeshiva where both dimensions of Torah — the revealed (Nigleh) and the hidden (Chassidus) — were studied with equal seriousness, equal rigor, and equal time. The daily schedule alternated between Talmud study and Chassidic texts, between intellectual analysis and the cultivation of the soul.</span>
-            <span class="ru">Ребе Рашаб полностью разорвал с этой моделью. Он создал ешиву, где оба измерения Торы — раскрытое (Нигле) и скрытое (Хасидус) — изучались с одинаковой серьёзностью, одинаковой строгостью и одинаковым временем. Дневное расписание чередовало изучение Талмуда и хасидских текстов, интеллектуальный анализ и воспитание души.</span>
+          <img class="founding-portrait-img"
+               src="/images/sites/rashab.svg"
+               alt="Rabbi Shalom DovBer Schneersohn — the Rebbe Rashab" />
+          <p class="founding-portrait-caption">
+            <span class="en">Rabbi Shalom DovBer Schneersohn<br>The Rebbe Rashab (1860–1920)</span>
+            <span class="ru">Рабби Шолом Довбер Шнеерсон<br>Ребе Рашаб (1860–1920)</span>
           </p>
         </div>
+        <div class="founding-portrait-text">
+          <h3 style="margin-bottom:0.75rem;"><span class="en">A Revolutionary Concept</span><span class="ru">Революционная идея</span></h3>
+          <p>
+            <span class="en">Before Tomchei Temimim, yeshivas in Eastern Europe focused almost exclusively on Talmud and halachic study. The world of Chassidus — its philosophy, its meditative practices, its emotional devotion — was largely learned outside the walls of formal education, if at all. There was no institution that demanded both.</span>
+            <span class="ru">До Томхей Тмимим ешивы в Восточной Европе сосредотачивались почти исключительно на Талмуде и галахе. Мир хасидизма — его философия, медитативные практики, эмоциональная преданность — в основном изучался вне стен формального образования. Не было учреждения, требовавшего и того, и другого.</span>
+          </p>
+          <p style="margin-top:0.75rem;">
+            <span class="en">The Rebbe Rashab broke with this model entirely. He created a yeshiva where both dimensions of Torah — the revealed (<em>Nigleh</em>) and the hidden (<em>Chassidus</em>) — were studied with equal seriousness, equal rigor, and equal time. The daily schedule alternated between Talmud study and Chassidic texts, between intellectual analysis and the cultivation of the soul.</span>
+            <span class="ru">Ребе Рашаб полностью разорвал с этой моделью. Он создал ешиву, где оба измерения Торы — раскрытое (<em>Нигле</em>) и скрытое (<em>Хасидус</em>) — изучались с одинаковой серьёзностью и временем. Дневное расписание чередовало изучение Талмуда и хасидских текстов, интеллектуальный анализ и воспитание души.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-2 ruled">
         <div>
           <h3><span class="en">The Name: Tomchei Temimim</span><span class="ru">Название: Томхей Тмимим</span></h3>
           <p>
-            <span class="en">The name means "Supporters of the Perfect Ones." It reflects the Rebbe Rashab's vision for his students: <em>temimim</em> — whole, complete, integrated human beings whose Torah knowledge and inner spiritual life were inseparable. A talmid of Tomchei Temimim was expected to be a scholar <em>and</em> a Chassid — not one or the other, but both, unified.</span>
-            <span class="ru">Название означает «Поддерживающие совершенных». Оно отражает видение Ребе Рашаба для своих студентов: <em>тмимим</em> — целостные, совершенные, интегрированные люди, чьи знания Торы и внутренняя духовная жизнь были неразделимы. От тalmid Томхей Тмимим ожидалось, что он будет учёным <em>и</em> хасидом — не одним или другим, но обоими, в единстве.</span>
+            <span class="en">The name means <strong>"Supporters of the Perfect Ones."</strong> It reflects the Rebbe Rashab's vision: <em>temimim</em> — whole, integrated human beings whose Torah knowledge and inner spiritual life were inseparable. A student of Tomchei Temimim was expected to be a scholar <em>and</em> a Chassid — not one or the other, but both, unified.</span>
+            <span class="ru">Название означает <strong>«Поддерживающие совершенных».</strong> Оно отражает видение Ребе Рашаба: <em>тмимим</em> — цельные, интегрированные люди, чьи знания Торы и внутренняя духовная жизнь неразделимы. От студента Томхей Тмимим ожидалось, что он будет учёным <em>и</em> хасидом — не одним или другим, но обоими, в единстве.</span>
           </p>
+          <div class="highlight-box">
+            <p>
+              <span class="en">The Rebbe Rashab described his students as <strong>"soldiers of the House of David"</strong> — trained and equipped to bring the light of Chassidus into the world, wherever they would go.</span>
+              <span class="ru">Ребе Рашаб описывал своих студентов как <strong>«солдат Дома Давида»</strong> — обученных и подготовленных нести свет хасидизма в мир, куда бы они ни отправились.</span>
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3><span class="en">The First Students</span><span class="ru">Первые студенты</span></h3>
           <p>
-            <span class="en">The Rebbe Rashab described his students as "soldiers of the House of David" — people trained and equipped to bring the light of Chassidus into the world, wherever they would go.</span>
-            <span class="ru">Ребе Рашаб описывал своих студентов как «солдат Дома Давида» — людей, обученных и подготовленных нести свет хасидизма в мир, куда бы они ни отправились.</span>
+            <span class="en">When the yeshiva opened, the Rebbe's own son — Rabbi Yosef Yitzchak Schneersohn — served as the first mashpia (spiritual guide and mentor). The founding class was small, but word spread quickly. Students came from across the Pale of Settlement, some travelling days on foot to reach Lubavitch.</span>
+            <span class="ru">Когда ешива открылась, собственный сын Ребе — Рабби Йосеф Ицхак Шнеерсон — служил первым машпиа (духовным наставником). Основной класс был небольшим, но слух распространился быстро. Студенты приезжали со всей черты оседлости, некоторые добирались пешком несколько дней, чтобы достичь Любавича.</span>
+          </p>
+          <p style="margin-top:0.75rem;">
+            <span class="en">The yeshiva was housed in buildings adjacent to the Rebbe's court — the same Chatzer where thousands of Chassidim came for guidance and inspiration. To study in Tomchei Temimim was to live at the center of the Chabad world.</span>
+            <span class="ru">Ешива располагалась в зданиях рядом с двором Ребе — тем самым Хацером, куда тысячи хасидов приходили за наставлениями и вдохновением. Учиться в Томхей Тмимим означало жить в центре хабадского мира.</span>
           </p>
         </div>
       </div>
@@ -122,8 +285,8 @@
           <span class="ru">«Студенты Томхей Тмимим — солдаты Дома Давида. Они должны быть совершенны во всём — в Торе, в молитве, в поведении, в любви к каждому еврею — и они должны нести этот свет в мир.»</span>
         </p>
         <cite>
-          <span class="en">— Rabbi Shalom DovBer Schneersohn, the Rebbe Rashab, founder of Tomchei Temimim</span>
-          <span class="ru">— Рабби Шолом Довбер Шнеерсон, Ребе Рашаб, основатель Томхей Тмимим</span>
+          <span class="en">— Rabbi Shalom DovBer Schneersohn, the Rebbe Rashab · Founder of Tomchei Temimim, 1897</span>
+          <span class="ru">— Рабби Шолом Довбер Шнеерсон, Ребе Рашаб · Основатель Томхей Тмимим, 1897</span>
         </cite>
       </div>
     </section>
@@ -132,31 +295,31 @@
     <section class="section">
       <div class="section-hd">
         <h2><span class="en">The Curriculum</span><span class="ru">Учебная программа</span></h2>
-        <span class="section-label"><span class="en">Two dimensions of Torah</span><span class="ru">Два измерения Торы</span></span>
+        <span class="section-label"><span class="en">Two dimensions of Torah, united</span><span class="ru">Два измерения Торы в единстве</span></span>
       </div>
       <div class="col-3 ruled">
         <article class="article-card">
           <p class="dateline"><span class="en">Nigleh — The Revealed Torah</span><span class="ru">Нигле — Открытая Тора</span></p>
           <h3><span class="en">Talmud &amp; Halacha</span><span class="ru">Талмуд и Галаха</span></h3>
           <p>
-            <span class="en">Students spend hours each day in intensive Talmud study — the Gemara with its commentaries, the halachic codes, the responsa literature. The standard of scholarship demanded was high: a talmid of Tomchei Temimim was expected to be a serious Talmudist.</span>
-            <span class="ru">Студенты ежедневно часами занимаются интенсивным изучением Талмуда — Гемары с комментариями, галахических кодексов, литературы респонса. Предъявляемый стандарт учёности был высок: от тalmid Томхей Тмимим ожидалось, что он будет серьёзным талмудистом.</span>
+            <span class="en">Hours each day in intensive Talmud study — Gemara with its commentaries, the halachic codes, responsa literature. The standard demanded was high: a student of Tomchei Temimim was expected to be a serious Talmudist by any standard.</span>
+            <span class="ru">Ежедневно часами — интенсивное изучение Талмуда: Гемара с комментариями, галахические кодексы, литература респонса. Требуемый уровень был высок: студент Томхей Тмимим должен был быть серьёзным талмудистом по любым меркам.</span>
           </p>
         </article>
         <article class="article-card">
           <p class="dateline"><span class="en">Chassidus — The Inner Torah</span><span class="ru">Хасидус — Внутренняя Тора</span></p>
-          <h3><span class="en">Kabbalah &amp; Chassidic Philosophy</span><span class="ru">Кабала и Хасидская философия</span></h3>
+          <h3><span class="en">Kabbalah &amp; Chassidic Philosophy</span><span class="ru">Кабала и хасидская философия</span></h3>
           <p>
-            <span class="en">Daily study of Chassidic texts — the Tanya, the maamarim of the Rebbeim, the discourses of Chabad philosophy — was required. Students learned to understand the intellectual structure of Kabbalistic concepts and to internalize them as a living guide to thought and feeling.</span>
-            <span class="ru">Ежедневное изучение хасидских текстов — Тании, маамаров Ребеим, дискурсов хабадской философии — было обязательным. Студенты учились понимать интеллектуальную структуру каббалистических концепций и интернализировать их как живое руководство для мыслей и чувств.</span>
+            <span class="en">Daily study of the Tanya, the maamarim of the Rebbeim, and Chabad philosophical discourses was required alongside Talmud. Students learned to understand and internalize Kabbalistic concepts as a living guide to thought, emotion, and action.</span>
+            <span class="ru">Ежедневное изучение Тании, маамаров Ребеим и философских дискурсов Хабада — наряду с Талмудом. Студенты учились понимать и интернализировать каббалистические концепции как живое руководство для мысли, эмоций и действий.</span>
           </p>
         </article>
         <article class="article-card">
           <p class="dateline"><span class="en">Avodah — Spiritual Practice</span><span class="ru">Авода — Духовная практика</span></p>
           <h3><span class="en">Prayer, Character, Conduct</span><span class="ru">Молитва, Характер, Поведение</span></h3>
           <p>
-            <span class="en">Study alone was not enough. The Rebbe Rashab demanded that his students develop their character: long, meditative Chassidic prayer; refined middos; a genuine love for every Jew. Learning was meant to transform the person, not merely fill the mind.</span>
-            <span class="ru">Одной учёбы было недостаточно. Ребе Рашаб требовал, чтобы его студенты развивали свой характер: долгую, медитативную хасидскую молитву; отточенные мидот; искреннюю любовь к каждому еврею. Обучение должно было преобразить человека, а не просто наполнить разум.</span>
+            <span class="en">Study alone was not enough. The Rebbe Rashab demanded his students develop their character: long meditative Chassidic prayer each morning, refined <em>middos</em>, and a genuine love for every Jew. Learning was meant to transform the person — not merely fill the mind.</span>
+            <span class="ru">Одной учёбы было недостаточно. Ребе Рашаб требовал развития характера: долгая медитативная молитва каждое утро, утончённые <em>мидот</em> и искренняя любовь к каждому еврею. Обучение должно было преобразить человека, а не просто наполнить разум.</span>
           </p>
         </article>
       </div>
@@ -166,54 +329,54 @@
     <section class="section">
       <div class="section-hd">
         <h2><span class="en">History of the Yeshiva</span><span class="ru">История ешивы</span></h2>
-        <span class="section-label"><span class="en">1897 — today</span><span class="ru">1897 — сегодня</span></span>
+        <span class="section-label"><span class="en">1897 — present</span><span class="ru">1897 — наши дни</span></span>
       </div>
       <div class="timeline">
         <div class="timeline-item">
           <time>1897</time>
           <h3><span class="en">Founded in Lubavitch</span><span class="ru">Основана в Любавиче</span></h3>
-          <p><span class="en">The Rebbe Rashab opens Tomchei Temimim in Lubavitch with a small group of dedicated students. His son, Rabbi Yosef Yitzchak, serves as the first mashpia (spiritual guide). The yeshiva immediately attracts students from across the Pale of Settlement.</span><span class="ru">Ребе Рашаб открывает Томхей Тмимим в Любавиче с небольшой группой преданных студентов. Его сын, Рабби Йосеф Ицхак, служит первым машпиа (духовным наставником). Ешива немедленно привлекает студентов со всей черты оседлости.</span></p>
+          <p><span class="en">The Rebbe Rashab opens Tomchei Temimim in Lubavitch with a small founding class. His son, Rabbi Yosef Yitzchak, serves as the first mashpia. The yeshiva immediately draws students from across the Pale of Settlement, establishing a new model for Jewish education.</span><span class="ru">Ребе Рашаб открывает Томхей Тмимим в Любавиче с небольшим основным классом. Его сын Рабби Йосеф Ицхак служит первым машпиа. Ешива немедленно привлекает студентов со всей черты оседлости, устанавливая новую модель еврейского образования.</span></p>
         </div>
         <div class="timeline-item">
           <time>1897–1915</time>
           <h3><span class="en">The Golden Years in Lubavitch</span><span class="ru">Золотые годы в Любавиче</span></h3>
-          <p><span class="en">For nearly two decades, Tomchei Temimim flourishes in Lubavitch. Hundreds of students pass through its walls. The yeshiva's model — Torah and Chassidus united — spreads its influence across the Jewish world.</span><span class="ru">Почти два десятилетия Томхей Тмимим процветает в Любавиче. Сотни студентов проходят через её стены. Модель ешивы — Тора и хасидус в единстве — распространяет своё влияние по всему еврейскому миру.</span></p>
+          <p><span class="en">For nearly two decades, Tomchei Temimim flourishes in Lubavitch. Hundreds of students pass through its walls. The Rebbe Rashab delivers his most important discourses here. The yeshiva's unique model spreads its influence across the entire Jewish world.</span><span class="ru">Почти два десятилетия Томхей Тмимим процветает в Любавиче. Сотни студентов проходят через её стены. Здесь Ребе Рашаб произносит свои важнейшие дискурсы. Уникальная модель ешивы распространяет своё влияние по всему еврейскому миру.</span></p>
         </div>
         <div class="timeline-item">
           <time>1915</time>
           <h3><span class="en">Evacuation from Lubavitch</span><span class="ru">Эвакуация из Любавича</span></h3>
-          <p><span class="en">World War I forces the Rebbe Rashab to relocate the yeshiva from Lubavitch to Kremenchug, Ukraine, and later to Rostov-on-Don. The yeshiva continues operating despite the upheaval — the first of many times it would survive displacement.</span><span class="ru">Первая мировая война вынуждает Ребе Рашаба перевести ешиву из Любавича в Кременчуг, Украина, а позже в Ростов-на-Дону. Ешива продолжает работать, несмотря на потрясения — первый из многих случаев, когда она переживёт перемещение.</span></p>
+          <p><span class="en">World War I forces the Rebbe Rashab to relocate the yeshiva — first to Kremenchug, Ukraine, then to Rostov-on-Don. The yeshiva continues despite the upheaval. It is the first of many displacements the institution would survive through sheer will and devotion.</span><span class="ru">Первая мировая война вынуждает Ребе Рашаба переместить ешиву — сначала в Кременчуг, Украина, затем в Ростов-на-Дону. Ешива продолжает работать несмотря на потрясения. Это первое из многих перемещений, которые учреждение переживёт благодаря силе воли и преданности.</span></p>
         </div>
         <div class="timeline-item">
-          <time>1920-е–1930-е</time>
-          <h3><span class="en">Surviving Soviet Persecution</span><span class="ru">Выживание в условиях советских преследований</span></h3>
-          <p><span class="en">Under the Frierdiker Rebbe's leadership, Tomchei Temimim operates underground throughout the Soviet period. Branches secretly function across the USSR despite persecution, arrest of teachers, and the threat of imprisonment. The yeshiva refuses to close.</span><span class="ru">Под руководством Предыдущего Ребе Томхей Тмимим действует подпольно на протяжении всего советского периода. Отделения тайно функционируют по всему СССР, несмотря на преследования, аресты учителей и угрозу тюремного заключения. Ешива отказывается закрываться.</span></p>
+          <time>1920–1930-е</time>
+          <h3><span class="en">Underground in the Soviet Union</span><span class="ru">Подпольно в Советском Союзе</span></h3>
+          <p><span class="en">Under the Frierdiker Rebbe, Tomchei Temimim operates clandestinely throughout Soviet Russia. Branches secretly function across the USSR despite the persecution of teachers, arrests, and the threat of Siberian exile. The yeshiva refuses to close — it simply goes underground.</span><span class="ru">Под руководством Предыдущего Ребе Томхей Тмимим действует нелегально по всей советской России. Отделения тайно функционируют по всему СССР, несмотря на преследование учителей, аресты и угрозу сибирской ссылки. Ешива отказывается закрываться — она просто уходит в подполье.</span></p>
         </div>
         <div class="timeline-item">
           <time>1940</time>
           <h3><span class="en">Re-Established in America</span><span class="ru">Восстановлена в Америке</span></h3>
-          <p><span class="en">The Frierdiker Rebbe escapes Nazi-occupied Europe and arrives in New York. Within months, he re-establishes Tomchei Temimim in Brooklyn. The address — 770 Eastern Parkway — becomes the world headquarters of Chabad and the symbolic home of the yeshiva.</span><span class="ru">Предыдущий Ребе бежит из оккупированной нацистами Европы и прибывает в Нью-Йорк. В течение нескольких месяцев он восстанавливает Томхей Тмимим в Бруклине. Адрес — 770 Истерн Паркуэй — становится мировой штаб-квартирой Хабада и символическим домом ешивы.</span></p>
+          <p><span class="en">The Frierdiker Rebbe escapes Nazi-occupied Europe and arrives in New York. Within months he re-establishes Tomchei Temimim in Brooklyn. The address — 770 Eastern Parkway — becomes the world headquarters of Chabad and the symbolic home of the yeshiva, drawing students from across the globe.</span><span class="ru">Предыдущий Ребе бежит из оккупированной нацистами Европы и прибывает в Нью-Йорк. В течение нескольких месяцев он восстанавливает Томхей Тмимим в Бруклине. Адрес — 770 Истерн Паркуэй — становится мировой штаб-квартирой Хабада и символическим домом ешивы, привлекая студентов со всего мира.</span></p>
         </div>
         <div class="timeline-item">
-          <time>1950-е–1990-е</time>
-          <h3><span class="en">Global Expansion Under the Rebbe</span><span class="ru">Глобальное расширение под руководством Ребе</span></h3>
-          <p><span class="en">Under the Lubavitcher Rebbe, Tomchei Temimim branches open around the world — Israel, France, England, Australia, Morocco, Argentina, and dozens more. Each new Chabad community established a yeshiva as one of its first institutions.</span><span class="ru">Под руководством Любавичского Ребе отделения Томхей Тмимим открываются по всему миру — Израиль, Франция, Англия, Австралия, Марокко, Аргентина и десятки других стран. Каждая новая хабадская община открывала ешиву как один из своих первых институтов.</span></p>
+          <time>1950–1990-е</time>
+          <h3><span class="en">Global Expansion Under the Lubavitcher Rebbe</span><span class="ru">Глобальное расширение под руководством Любавичского Ребе</span></h3>
+          <p><span class="en">Under the Lubavitcher Rebbe, Tomchei Temimim branches open around the world — Israel, France, England, Morocco, Argentina, Australia, and dozens more. Every new Chabad community established a yeshiva as one of its very first institutions. The map of Tomchei Temimim becomes the map of the Chabad world.</span><span class="ru">Под руководством Любавичского Ребе отделения Томхей Тмимим открываются по всему миру — Израиль, Франция, Англия, Марокко, Аргентина, Австралия и десятки других стран. Каждая новая хабадская община открывала ешиву как одно из первых учреждений. Карта Томхей Тмимим становится картой хабадского мира.</span></p>
         </div>
         <div class="timeline-item">
           <time>1990-е — сегодня</time>
-          <h3><span class="en">Return to Russia and Former Soviet States</span><span class="ru">Возвращение в Россию и бывшие советские республики</span></h3>
-          <p><span class="en">With the fall of the Soviet Union, Tomchei Temimim branches re-open across Russia, Ukraine, Belarus, and the republics of the former USSR — returning to the very territory from which the yeshiva was driven out decades earlier.</span><span class="ru">После распада Советского Союза отделения Томхей Тмимим вновь открываются по всей России, Украине, Беларуси и республикам бывшего СССР — возвращаясь на ту самую территорию, с которой ешива была вытеснена десятилетиями ранее.</span></p>
+          <h3><span class="en">Return to Russia and the Former Soviet States</span><span class="ru">Возвращение в Россию и бывшие советские республики</span></h3>
+          <p><span class="en">With the fall of the Soviet Union, Tomchei Temimim branches re-open across Russia, Ukraine, Belarus, and the former Soviet republics — returning to the very territory from which the yeshiva was driven out decades earlier. The circle closes: from Lubavitch to the world, and back again.</span><span class="ru">После распада Советского Союза отделения Томхей Тмимим вновь открываются по всей России, Украине, Беларуси и бывшим советским республикам — возвращаясь на ту самую территорию, с которой ешива была вытеснена десятилетиями ранее. Круг замыкается: из Любавича — в мир, и обратно.</span></p>
         </div>
       </div>
     </section>
 
     <!-- WORLDWIDE NETWORK -->
-    <section class="section">
+    <section class="section" id="worldwide">
       <div class="section-hd">
         <h2><span class="en">The Worldwide Network Today</span><span class="ru">Мировая сеть сегодня</span></h2>
-        <span class="section-label"><span class="en">Six continents</span><span class="ru">Шесть континентов</span></span>
+        <span class="section-label"><span class="en">Six continents · One name · One mission</span><span class="ru">Шесть континентов · Одно имя · Одна миссия</span></span>
       </div>
-      <p class="section-intro">
+      <p class="worldwide-intro">
         <span class="en">From a single building in Lubavitch, Tomchei Temimim has grown into a worldwide network of yeshivos sharing one name, one educational philosophy, and one founding vision — rooted in the village where it all began in 1897.</span>
         <span class="ru">Из одного здания в Любавиче Томхей Тмимим выросла во всемирную сеть ешив, разделяющих одно название, одну образовательную философию и одно основополагающее видение — уходящих корнями в посёлок, где всё началось в 1897 году.</span>
       </p>
@@ -221,47 +384,59 @@
         <article class="article-card">
           <p class="dateline"><span class="en">North America</span><span class="ru">Северная Америка</span></p>
           <h3><span class="en">770 Eastern Parkway, Brooklyn</span><span class="ru">770 Истерн Паркуэй, Бруклин</span></h3>
-          <p><span class="en">The world headquarters of Chabad-Lubavitch and the symbolic home of Tomchei Temimim worldwide. The central yeshiva at "770" draws students from dozens of countries. Additional branches across the United States and Canada.</span><span class="ru">Мировая штаб-квартира Хабад-Любавич и символический дом Томхей Тмимим во всём мире. Центральная ешива в «770» привлекает студентов из десятков стран. Дополнительные отделения по всей территории США и Канады.</span></p>
+          <p><span class="en">The world headquarters of Chabad-Lubavitch and the symbolic home of Tomchei Temimim worldwide. The central yeshiva at "770" draws students from dozens of countries. Additional major branches operate across the United States and Canada.</span><span class="ru">Мировая штаб-квартира Хабад-Любавич и символический дом Томхей Тмимим во всём мире. Центральная ешива в «770» привлекает студентов из десятков стран. Крупные отделения действуют по всей территории США и Канады.</span></p>
         </article>
         <article class="article-card">
           <p class="dateline"><span class="en">Israel</span><span class="ru">Израиль</span></p>
           <h3><span class="en">Lod, Kfar Chabad, Tzfat &amp; beyond</span><span class="ru">Лод, Кфар Хабад, Цфат и другие</span></h3>
-          <p><span class="en">Israel is home to some of the largest Tomchei Temimim yeshivos in the world. The central Israeli yeshiva in Lod (established under the Frierdiker Rebbe) and the famous Kfar Chabad campus are major centers of Chabad scholarship.</span><span class="ru">Израиль является домом для некоторых из крупнейших ешив Томхей Тмимим в мире. Центральная израильская ешива в Лоде (основанная при Предыдущем Ребе) и знаменитый кампус Кфар Хабад являются крупными центрами хабадской учёности.</span></p>
+          <p><span class="en">Israel is home to some of the largest Tomchei Temimim yeshivos in the world. The central Israeli yeshiva in Lod and the famous Kfar Chabad campus are major centers of Chabad scholarship, training rabbis, educators, and shluchim for global service.</span><span class="ru">Израиль — дом для крупнейших ешив Томхей Тмимим. Центральная израильская ешива в Лоде и кампус Кфар Хабад — крупные центры хабадской учёности, готовящие раввинов, педагогов и шлухим.</span></p>
         </article>
         <article class="article-card">
           <p class="dateline"><span class="en">Russia &amp; Former USSR</span><span class="ru">Россия и бывший СССР</span></p>
           <h3><span class="en">Moscow, St. Petersburg, Dnepropetrovsk</span><span class="ru">Москва, Санкт-Петербург, Днепропетровск</span></h3>
-          <p><span class="en">After 70 years of forced closure, Tomchei Temimim returned to Russia and the former Soviet republics in the 1990s. Today it operates in Moscow, St. Petersburg, and dozens of cities across the former USSR — a direct continuation of the yeshiva that once operated underground in these very lands.</span><span class="ru">После 70 лет принудительного закрытия Томхей Тмимим вернулась в Россию и бывшие советские республики в 1990-х годах. Сегодня она работает в Москве, Санкт-Петербурге и десятках городов по всему бывшему СССР — прямое продолжение ешивы, которая когда-то действовала подпольно на этих самых землях.</span></p>
+          <p><span class="en">After 70 years of forced closure, Tomchei Temimim returned to Russia and the former Soviet republics in the 1990s — a direct continuation of the yeshiva that once operated underground in these very lands, on the same soil that birthed the institution in 1897.</span><span class="ru">После 70 лет принудительного закрытия Томхей Тмимим вернулась в Россию и бывший СССР в 1990-х — прямое продолжение ешивы, когда-то действовавшей подпольно на этих самых землях, на той же почве, где учреждение родилось в 1897 году.</span></p>
         </article>
         <article class="article-card">
           <p class="dateline"><span class="en">Europe</span><span class="ru">Европа</span></p>
           <h3><span class="en">France, England, Germany &amp; beyond</span><span class="ru">Франция, Англия, Германия и другие</span></h3>
-          <p><span class="en">Major Tomchei Temimim yeshivos operate in Paris, London, Manchester, and other European cities. The Paris yeshiva, established under the Lubavitcher Rebbe, has trained generations of European Chabad rabbis and educators.</span><span class="ru">Крупные ешивы Томхей Тмимим действуют в Париже, Лондоне, Манчестере и других европейских городах. Парижская ешива, основанная при Любавичском Ребе, воспитала поколения европейских хабадских раввинов и педагогов.</span></p>
+          <p><span class="en">Major Tomchei Temimim yeshivos operate in Paris, London, Manchester, and other European cities. The Paris yeshiva — established under the Lubavitcher Rebbe — has trained generations of European Chabad rabbis and shluchim serving communities across the continent.</span><span class="ru">Крупные ешивы действуют в Париже, Лондоне, Манчестере и других городах Европы. Парижская ешива воспитала поколения европейских хабадских раввинов и шлухим, обслуживающих общины по всему континенту.</span></p>
         </article>
         <article class="article-card">
-          <p class="dateline"><span class="en">South America &amp; Australia</span><span class="ru">Южная Америка и Австралия</span></h3>
+          <p class="dateline"><span class="en">South America &amp; Australia</span><span class="ru">Южная Америка и Австралия</span></p>
           <h3><span class="en">Buenos Aires, Melbourne &amp; beyond</span><span class="ru">Буэнос-Айрес, Мельбурн и другие</span></h3>
-          <p><span class="en">Established yeshivos in Argentina, Brazil, and Australia serve the Sephardic and Ashkenazic Chabad communities in those countries. The Melbourne yeshiva is one of the largest and most respected in the Southern Hemisphere.</span><span class="ru">Устоявшиеся ешивы в Аргентине, Бразилии и Австралии обслуживают сефардские и ашкеназские хабадские общины этих стран. Мельбурнская ешива является одной из крупнейших и наиболее уважаемых в Южном полушарии.</span></p>
+          <p><span class="en">Established yeshivos in Argentina, Brazil, and Australia serve the Chabad communities of the Southern Hemisphere. The Melbourne yeshiva is one of the largest and most respected in the region, and Buenos Aires maintains a strong Chabad academic tradition dating back generations.</span><span class="ru">Ешивы в Аргентине, Бразилии и Австралии обслуживают хабадские общины Южного полушария. Мельбурнская ешива — одна из крупнейших в регионе, а Буэнос-Айрес поддерживает сильную хабадскую академическую традицию, уходящую в глубь поколений.</span></p>
         </article>
         <article class="article-card">
           <p class="dateline"><span class="en">Africa &amp; Asia</span><span class="ru">Африка и Азия</span></p>
           <h3><span class="en">South Africa, Morocco, India &amp; beyond</span><span class="ru">ЮАР, Марокко, Индия и другие</span></h3>
-          <p><span class="en">Tomchei Temimim branches in Johannesburg, Cape Town, Casablanca, and Mumbai serve Jewish communities in Africa and Asia. In each location, the yeshiva carries the same educational mission established in Lubavitch in 1897.</span><span class="ru">Отделения Томхей Тмимим в Йоханнесбурге, Кейптауне, Касабланке и Мумбаи обслуживают еврейские общины Африки и Азии. В каждом месте ешива несёт ту же образовательную миссию, установленную в Любавиче в 1897 году.</span></p>
+          <p><span class="en">Branches in Johannesburg, Cape Town, Casablanca, and Mumbai serve Jewish communities across Africa and Asia. In each location, the yeshiva carries the same educational mission established in Lubavitch in 1897 — Torah and Chassidus, united, for every Jewish soul.</span><span class="ru">Отделения в Йоханнесбурге, Кейптауне, Касабланке и Мумбаи обслуживают еврейские общины Африки и Азии. В каждом месте ешива несёт ту же миссию, что и в Любавиче в 1897 году — Тора и хасидус, в единстве, для каждой еврейской души.</span></p>
         </article>
       </div>
     </section>
 
-    <!-- BACK LINK -->
+    <!-- CTA -->
     <section class="section">
-      <a class="btn" href="/sacred-sites/">
-        <span class="en">← All Sacred Sites</span>
-        <span class="ru">← Все святые места</span>
-      </a>
-      &nbsp;&nbsp;
-      <a class="btn btn-fill" href="/history/">
-        <span class="en">Read the full history</span>
-        <span class="ru">Полная история</span>
-      </a>
+      <div class="cta-panel">
+        <h3>
+          <span class="en">The yeshiva that began in Lubavitch still walks the same road.</span>
+          <span class="ru">Ешива, начавшаяся в Любавиче, идёт той же дорогой.</span>
+        </h3>
+        <p>
+          <span class="en">Explore the village that gave birth to Tomchei Temimim — the sacred sites, the restoration of the cemetery and beis midrash, and the broader history of Chabad in Lubavitch.</span>
+          <span class="ru">Исследуйте деревню, давшую жизнь Томхей Тмимим — святые места, реставрацию кладбища и бейт-мидраша, и широкую историю Хабада в Любавиче.</span>
+        </p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.25rem;">
+          <a class="btn btn-fill" href="/sacred-sites/">
+            <span class="en">Sacred Sites of Lubavitch</span><span class="ru">Святые места Любавича</span>
+          </a>
+          <a class="btn" href="/history/">
+            <span class="en">Full History</span><span class="ru">Полная история</span>
+          </a>
+          <a class="btn" href="/restoration/">
+            <span class="en">Restoration Project</span><span class="ru">Проект реставрации</span>
+          </a>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -270,7 +445,7 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <h3><span class="en">Lubavitch Heritage Restoration</span><span class="ru">Наследие Любавич</span></h3>
+          <h3><span class="en">Lubavitch Heritage</span><span class="ru">Наследие Любавич</span></h3>
           <p><span class="en">A historical archive and restoration chronicle for Lubavitch / Lyubavichi — the Russian village that served as the seat of Chabad-Lubavitch for 102 years.</span><span class="ru">Историческая летопись и хроника реставрации Любавича / Любавичей.</span></p>
         </div>
         <div>
@@ -283,12 +458,12 @@
         </div>
         <div>
           <h3><span class="en">Note</span><span class="ru">Примечание</span></h3>
-          <p><span class="en">An independent historical and informational project. All factual details are drawn from public sources. Verify before citation.</span><span class="ru">Независимый исторический и информационный проект. Данные взяты из открытых источников. Проверяйте перед цитированием.</span></p>
+          <p><span class="en">An independent historical and informational project. All factual details are drawn from public sources.</span><span class="ru">Независимый исторический и информационный проект. Данные взяты из открытых источников.</span></p>
         </div>
       </div>
       <div class="footer-note">
-        <span class="en">© Lubavitch Heritage Archive Project · Images: Wikimedia Commons (CC BY-SA) where indicated</span>
-        <span class="ru">© Проект «Архив наследия Любавич»</span>
+        <span class="en">© Lubavitch Heritage Archive Project · Historical images: Chabad archives</span>
+        <span class="ru">© Проект «Архив наследия Любавич» · Исторические фото: архивы Хабада</span>
       </div>
     </div>
   </footer>
