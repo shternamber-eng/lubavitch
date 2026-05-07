@@ -1,3 +1,31 @@
+/* ── LANGUAGE TOGGLE ──────────────────────────────── */
+(function () {
+  var lang = localStorage.getItem('lang') || 'en';
+  document.documentElement.dataset.lang = lang;
+
+  function setLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    document.documentElement.dataset.lang = l;
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.lang === l);
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('lang-btn')) {
+      setLang(e.target.dataset.lang);
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+  });
+})();
+
+/* ── UTILITIES ────────────────────────────────────── */
 const state = {};
 
 function qs(selector, scope = document) {
@@ -10,27 +38,26 @@ function qsa(selector, scope = document) {
 
 async function fetchJSON(path) {
   try {
-    const response = await fetch(path);
-    return response.ok ? await response.json() : null;
-  } catch (error) {
+    const res = await fetch(path);
+    return res.ok ? await res.json() : null;
+  } catch {
     return null;
   }
 }
 
+/* ── NAV ──────────────────────────────────────────── */
 function setNavActive() {
   const page = document.body.dataset.page;
   if (!page) return;
-  qsa('.nav-list a').forEach((link) => {
-    const href = link.getAttribute('href');
-    if (href && href.includes(page)) {
-      link.classList.add('active-link');
-    }
+  qsa('.navbar-inner a').forEach((link) => {
+    const href = link.getAttribute('href') || '';
+    if (href.includes(page)) link.classList.add('active-link');
   });
 }
 
 function toggleMenu() {
   const button = qs('.nav-toggle');
-  const nav = qs('.nav-list');
+  const nav = qs('.navbar-inner');
   if (!button || !nav) return;
   button.addEventListener('click', () => {
     nav.classList.toggle('open');
@@ -38,59 +65,56 @@ function toggleMenu() {
   });
 }
 
+/* ── RENDER: NEWS PREVIEW (home page) ────────────── */
 function renderPreviewCards(items, targetId) {
   const container = qs(targetId);
   if (!container || !items) return;
-  container.innerHTML = items.slice(0, 3).map((item) => {
-    return `
-      <article class="news-card">
-        <img src="${item.coverImage}" alt="${item.title}" loading="lazy">
-        <div class="card-content">
-          <div class="news-meta"><span>${item.date}</span><span>${item.category}</span></div>
-          <h3>${item.title}</h3>
-          <p>${item.excerpt}</p>
-          <a class="btn" href="/news/${item.slug}/">Read more</a>
+  container.innerHTML = items.slice(0, 3).map((item) => `
+    <article class="news-card">
+      <img src="${item.coverImage}" alt="${item.title}" loading="lazy" />
+      <div class="card-content">
+        <div class="news-meta">
+          <span>${item.date}</span>
+          <span>${item.category}</span>
         </div>
-      </article>`;
-  }).join('');
+        <h3>${item.title}</h3>
+        <p>${item.excerpt}</p>
+        <a class="btn" href="/news/${item.slug}/">Read more</a>
+      </div>
+    </article>`).join('');
 }
 
-function renderSectionCards(items, targetId) {
-  const container = qs(targetId);
-  if (!container || !items) return;
-  container.innerHTML = items.map((item) => {
-    return `
-      <article class="card">
-        <h3 class="card-strong">${item.title}</h3>
-        <p>${item.text}</p>
-      </article>`;
-  }).join('');
-}
-
+/* ── RENDER: SACRED SITES ─────────────────────────── */
 function renderSites(cards) {
   const container = qs('#sites-list');
   if (!container || !cards) return;
   container.innerHTML = cards.map((item) => `
     <article class="site-card">
-      <img src="${item.image}" alt="${item.title}" loading="lazy">
+      <img src="${item.image}" alt="${item.title}" loading="lazy" />
       <div class="card-content">
-        <div class="site-meta"><span>${item.category}</span><span>${item.status}</span></div>
+        <div class="site-meta">
+          <span>${item.category}</span>
+          <span>${item.status}</span>
+        </div>
         <h3>${item.title}</h3>
         <p>${item.description}</p>
         <a class="btn" href="/sites/${item.slug}/">View details</a>
       </div>
-    </article>
-  `).join('');
+    </article>`).join('');
 }
 
+/* ── RENDER: ARCHIVE ──────────────────────────────── */
 function renderArchive(items) {
   const container = qs('#archive-list');
   if (!container || !items) return;
   container.innerHTML = items.map((item) => `
     <article class="archive-card">
-      <img src="${item.image}" alt="${item.title}" loading="lazy">
+      <img src="${item.image}" alt="${item.title}" loading="lazy" />
       <div class="card-content">
-        <div class="archive-meta"><span>${item.type}</span><span>${item.date}</span></div>
+        <div class="archive-meta">
+          <span>${item.type}</span>
+          <span>${item.date}</span>
+        </div>
         <h3>${item.title}</h3>
         <p>${item.description}</p>
         <small>${item.credit}</small>
@@ -98,31 +122,27 @@ function renderArchive(items) {
     </article>`).join('');
 }
 
+/* ── RENDER: RESTORATION TIMELINE ────────────────── */
 function renderRestoration(items) {
   const container = qs('#restoration-timeline');
   if (!container || !items) return;
-  container.innerHTML = items.map((item) => `
+  container.innerHTML = `<div class="timeline">${items.map((item) => `
     <div class="timeline-item">
-      <div class="timeline-card">
-        <time>${item.date}</time>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <small>${item.source}</small>
-        <div class="status-badge">${item.status}</div>
-      </div>
-    </div>
-  `).join('');
+      <time>${item.date}</time>
+      <h3>${item.title}</h3>
+      <p>${item.description}</p>
+      <small>${item.source}</small>
+      <span class="status-badge">${item.status}</span>
+    </div>`).join('')}</div>`;
 }
 
+/* ── RENDER: GALLERY ──────────────────────────────── */
 function createLightbox() {
   const overlay = qs('.lightbox-overlay');
   if (!overlay) return;
-  const closeBtn = qs('.lightbox-close', overlay);
-  closeBtn?.addEventListener('click', () => overlay.classList.remove('active'));
-  overlay.addEventListener('click', (event) => {
-    if (event.target === overlay) {
-      overlay.classList.remove('active');
-    }
+  qs('.lightbox-close', overlay)?.addEventListener('click', () => overlay.classList.remove('active'));
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
   });
 }
 
@@ -141,77 +161,78 @@ function renderGallery(items) {
   const container = qs('#gallery-grid');
   const filterBar = qs('#gallery-filters');
   if (!container || !items || !filterBar) return;
-  const categories = ["All", ...new Set(items.map((item) => item.category))];
-  filterBar.innerHTML = categories.map((category) => `
-    <button type="button" class="filter-button${category === 'All' ? ' active' : ''}" data-category="${category}">${category}</button>
-  `).join('');
 
-  function updateGrid(category = 'All') {
-    const selection = category === 'All' ? items : items.filter((item) => item.category === category);
-    container.innerHTML = selection.map((item) => `
-      <article class="gallery-item" data-id="${item.id}" tabindex="0" aria-label="View ${item.title}">
-        <img src="${item.image}" alt="${item.alt}" loading="lazy">
+  const categories = ['All', ...new Set(items.map((i) => i.category))];
+  filterBar.innerHTML = categories.map((cat) =>
+    `<button type="button" class="filter-button${cat === 'All' ? ' active' : ''}" data-category="${cat}">${cat}</button>`
+  ).join('');
+
+  function updateGrid(cat = 'All') {
+    const sel = cat === 'All' ? items : items.filter((i) => i.category === cat);
+    container.innerHTML = sel.map((item) => `
+      <article class="gallery-item" data-id="${item.id}" tabindex="0">
+        <img src="${item.image}" alt="${item.alt}" loading="lazy" />
         <div class="gallery-info">
           <h3>${item.title}</h3>
           <p>${item.date} · ${item.location}</p>
         </div>
-      </article>
-    `).join('');
+      </article>`).join('');
+
     qsa('.gallery-item').forEach((card) => {
-      card.addEventListener('click', () => {
-        const found = items.find((item) => item.id === card.dataset.id);
+      const open = () => {
+        const found = items.find((i) => i.id === card.dataset.id);
         if (found) showLightbox(found);
-      });
-      card.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-          const found = items.find((item) => item.id === card.dataset.id);
-          if (found) showLightbox(found);
-        }
-      });
+      };
+      card.addEventListener('click', open);
+      card.addEventListener('keydown', (e) => { if (e.key === 'Enter') open(); });
     });
   }
 
-  filterBar.addEventListener('click', (event) => {
-    const button = event.target.closest('button');
-    if (!button) return;
-    qsa('.filter-button').forEach((btn) => btn.classList.remove('active'));
-    button.classList.add('active');
-    updateGrid(button.dataset.category);
+  filterBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    qsa('.filter-button').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    updateGrid(btn.dataset.category);
   });
 
   updateGrid();
 }
 
+/* ── RENDER: NEWS LIST ────────────────────────────── */
 function renderNewsList(items) {
   const container = qs('#news-list');
   const searchInput = qs('#news-search');
   const categorySelect = qs('#news-category');
   if (!container || !items) return;
-  const categories = ["All", ...new Set(items.map((item) => item.category))];
+
+  const categories = ['All', ...new Set(items.map((i) => i.category))];
   if (categorySelect) {
-    categorySelect.innerHTML = categories.map((category) => `<option value="${category}">${category}</option>`).join('');
+    categorySelect.innerHTML = categories.map((cat) =>
+      `<option value="${cat}">${cat}</option>`).join('');
   }
 
   function updateList() {
-    const query = searchInput?.value.toLowerCase() || '';
+    const query = (searchInput?.value || '').toLowerCase();
     const category = categorySelect?.value || 'All';
     const filtered = items.filter((item) => {
-      const matchesCategory = category === 'All' || item.category === category;
-      const matchesSearch = item.title.toLowerCase().includes(query) || item.excerpt.toLowerCase().includes(query);
-      return matchesCategory && matchesSearch;
+      const matchCat = category === 'All' || item.category === category;
+      const matchQ = item.title.toLowerCase().includes(query) || item.excerpt.toLowerCase().includes(query);
+      return matchCat && matchQ;
     });
-
     container.innerHTML = filtered.map((item) => `
       <article class="news-card">
-        <img src="${item.coverImage}" alt="${item.title}" loading="lazy">
+        <img src="${item.coverImage}" alt="${item.title}" loading="lazy" />
         <div class="card-content">
-          <div class="news-meta"><span>${item.date}</span><span>${item.category}</span></div>
+          <div class="news-meta">
+            <span>${item.date}</span>
+            <span>${item.category}</span>
+          </div>
           <h3>${item.title}</h3>
           <p>${item.excerpt}</p>
           <a class="btn" href="/news/${item.slug}/">Read more</a>
         </div>
-      </article>
-    `).join('');
+      </article>`).join('');
   }
 
   searchInput?.addEventListener('input', updateList);
@@ -219,51 +240,59 @@ function renderNewsList(items) {
   updateList();
 }
 
+/* ── RENDER: NEWS DETAIL ──────────────────────────── */
 function renderNewsDetail(items) {
   const slug = location.pathname.split('/').filter(Boolean).pop();
-  const item = items?.find((entry) => entry.slug === slug);
+  const item = items?.find((e) => e.slug === slug);
   if (!item) return;
   const container = qs('#news-detail');
   if (!container) return;
   container.innerHTML = `
     <article class="news-card">
-      <img src="${item.coverImage}" alt="${item.title}" loading="lazy">
+      <img src="${item.coverImage}" alt="${item.title}" loading="lazy" />
       <div class="card-content">
-        <div class="news-meta"><span>${item.date}</span><span>${item.category}</span><span>${item.author}</span></div>
+        <div class="news-meta">
+          <span>${item.date}</span>
+          <span>${item.category}</span>
+          <span>${item.author}</span>
+        </div>
         <h1>${item.title}</h1>
         <p>${item.excerpt}</p>
         <div>${item.body}</div>
         <div class="page-note"><strong>Source note:</strong> ${item.sources}</div>
       </div>
     </article>`;
-  if (item.gallery && item.gallery.length) {
-    const gallery = document.createElement('div');
-    gallery.className = 'gallery-grid';
-    gallery.innerHTML = item.gallery.map((image) => `
-      <article class="gallery-item" data-id="${image.id}">
-        <img src="${image.image}" alt="${image.alt}" loading="lazy">
-        <div class="gallery-info">
-          <h3>${image.title}</h3>
-          <p>${image.date} · ${image.location}</p>
-        </div>
-      </article>
-    `).join('');
-    container.appendChild(gallery);
-    qsa('.gallery-item', gallery).forEach((card) => {
-      card.addEventListener('click', () => {
-        const found = item.gallery.find((image) => image.id === card.dataset.id);
-        if (found) showLightbox(found);
-      });
-    });
-  }
 }
 
+/* ── RENDER: HISTORY TIMELINE ─────────────────────── */
+function renderHistoryTimeline() {
+  const container = qs('#history-timeline');
+  if (!container) return;
+  container.innerHTML = `
+    <div class="timeline">
+      <div class="timeline-item"><time>c. 1813</time><h3>Chabad Court Moves to Lubavitch</h3><p>The Mitteler Rebbe establishes Lubavitch as the seat of Chabad, giving the movement its enduring name.</p></div>
+      <div class="timeline-item"><time>1813 – 1866</time><h3>The Tzemach Tzedek</h3><p>Rabbi Menachem Mendel Schneerson leads Chabad from Lubavitch, writing thousands of responsa and building the movement's institutions.</p></div>
+      <div class="timeline-item"><time>1897</time><h3>Tomchei Temimim Founded</h3><p>The Rebbe Rashab establishes the first yeshiva combining Talmud and Chassidus study, setting the model for all Chabad education.</p></div>
+      <div class="timeline-item"><time>1915 – 1916</time><h3>The Court Departs</h3><p>World War I forces the Rebbe Rashab to relocate the court from Lubavitch to Rostov-on-Don, ending 102 years of Chabad leadership in the village.</p></div>
+      <div class="timeline-item"><time>August 1941</time><h3>Nazi Occupation</h3><p>German forces occupy Lubavitch. On November 4, 1941, 483 Jews of the village are murdered.</p></div>
+      <div class="timeline-item"><time>1989</time><h3>Restoration Begins</h3><p>With the opening of the Soviet Union, the Lubavitcher Rebbe directs and funds the first modern renovation of the Ohel. A permanent Chabad presence is re-established in the village.</p></div>
+      <div class="timeline-item"><time>2000s – today</time><h3>Ongoing Restoration</h3><p>Rabbi Gavriel Gordon and the Geder Avos organization systematically restore the cemetery, rebuild the shul, and document the village's history.</p></div>
+    </div>`;
+}
+
+/* ── INIT ─────────────────────────────────────────── */
 function init() {
   setNavActive();
   toggleMenu();
   createLightbox();
+
   const page = document.body.dataset.page;
   if (!page) return;
+
+  if (page === 'history') {
+    renderHistoryTimeline();
+  }
+
   const promises = [
     fetchJSON('/data/news.json'),
     fetchJSON('/data/gallery.json'),
@@ -271,6 +300,7 @@ function init() {
     fetchJSON('/data/sacredSites.json'),
     fetchJSON('/data/archive.json'),
   ];
+
   Promise.all(promises).then(([news, gallery, restoration, sites, archive]) => {
     state.news = news || [];
     state.gallery = gallery || [];
@@ -278,39 +308,13 @@ function init() {
     state.sites = sites || [];
     state.archive = archive || [];
 
-    if (page === 'home') {
-      renderPreviewCards(state.news, '#latest-updates');
-    }
-    if (page === 'history') {
-      const intro = qs('#history-timeline');
-      if (intro) {
-        intro.innerHTML = `
-          <div class="timeline-item"><time>c. 1813</time><h3>Early Chabad connection</h3><p>Lubavitch is first documented as a center of Chabad life and leadership.</p></div>
-          <div class="timeline-item"><time>19th century</time><h3>Growth as a Chassidic center</h3><p>The village supported Torah study, Chassidic prayer, and the yeshiva tradition.</p></div>
-          <div class="timeline-item"><time>Late 19th century</time><h3>Tomchei Temimim</h3><p>The Tomchei Temimim yeshiva is associated with the life of Chabad students and teachers.</p></div>
-          <div class="timeline-item"><time>20th century</time><h3>Destruction, silence, and return</h3><p>Historical sites were disrupted by wartime and later Soviet neglect; memory endured through scholarship and return visits.</p></div>
-          <div class="timeline-item"><time>Late 20th century</time><h3>Preservation begins</h3><p>Visitors and local representatives began documenting and restoring the historic sites.</p></div>
-          <div class="timeline-item"><time>2000s–today</time><h3>Living restoration</h3><p>Ongoing restoration, documentation, and memory work honors the village and its heritage.</p></div>`;
-      }
-    }
-    if (page === 'sacred-sites') {
-      renderSites(state.sites);
-    }
-    if (page === 'restoration') {
-      renderRestoration(state.restoration);
-    }
-    if (page === 'gallery') {
-      renderGallery(state.gallery);
-    }
-    if (page === 'news') {
-      renderNewsList(state.news);
-    }
-    if (page === 'news-detail') {
-      renderNewsDetail(state.news);
-    }
-    if (page === 'archive') {
-      renderArchive(state.archive);
-    }
+    if (page === 'home') renderPreviewCards(state.news, '#latest-updates');
+    if (page === 'sacred-sites') renderSites(state.sites);
+    if (page === 'restoration') renderRestoration(state.restoration);
+    if (page === 'gallery') renderGallery(state.gallery);
+    if (page === 'news') renderNewsList(state.news);
+    if (page === 'news-detail') renderNewsDetail(state.news);
+    if (page === 'archive') renderArchive(state.archive);
   });
 }
 

@@ -1,68 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <script defer src="/assets/js/main.js"></script>
-  <meta name="description" content="An announcement introducing the Lubavitch Historical Archive Project and its work preserving Lubavitch heritage." />
-  <title>Welcome to the Lubavitch Historical Archive Project</title>
+  <meta name="description" content="Welcome to the Lubavitch Heritage Archive Project." />
+  <title>Welcome to the Lubavitch Heritage Archive | News</title>
+  <script>(function(){var l=localStorage.getItem('lang')||'en';document.documentElement.dataset.lang=l;})();</script>
 </head>
-<body class="heritage-background" data-page="news-detail">
-  <header class="header" role="banner">
-    <div class="page header-inner">
-      <a class="brand" href="/">
-        <strong>Lubavitch Heritage</strong>
-        <small>Historic archive &amp; restoration project</small>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">Menu</button>
-      <nav id="site-navigation" role="navigation">
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/history/">History</a></li>
-          <li><a href="/the-rebbe/">The Rebbe</a></li>
-          <li><a href="/sacred-sites/">Sacred Sites</a></li>
-          <li><a href="/restoration/">Restoration</a></li>
-          <li><a href="/gallery/">Gallery</a></li>
-          <li><a href="/news/">News</a></li>
-          <li><a href="/visit/">Visit</a></li>
-          <li><a href="/archive/">Archive</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </nav>
+<body data-page="news-detail">
+  <div class="lang-bar">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
+  </div>
+  <header>
+    <div class="masthead">
+      <p class="masthead-eyebrow"><span class="en">Lyubavichi, Smolensk Region, Russia</span><span class="ru">Любавичи, Смоленская область, Россия</span></p>
+      <h1 class="masthead-title"><span class="en">Lubavitch Heritage</span><span class="ru">Наследие Любавич</span></h1>
+      <hr class="masthead-rule" />
+      <p class="masthead-tagline"><span class="en">Historic Archive &amp; Restoration Chronicle</span><span class="ru">Историческая летопись и проект реставрации</span></p>
     </div>
+    <nav class="navbar" role="navigation">
+      <button class="nav-toggle" aria-expanded="false"><span class="en">Menu</span><span class="ru">Меню</span></button>
+      <div class="navbar-inner">
+        <a href="/"><span class="en">Home</span><span class="ru">Главная</span></a>
+        <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
+        <a href="/the-rebbe/"><span class="en">The Rebbe</span><span class="ru">Ребе</span></a>
+        <a href="/sacred-sites/"><span class="en">Sacred Sites</span><span class="ru">Святые места</span></a>
+        <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
+        <a href="/gallery/"><span class="en">Gallery</span><span class="ru">Галерея</span></a>
+        <a href="/news/"><span class="en">News</span><span class="ru">Новости</span></a>
+        <a href="/visit/"><span class="en">Visit</span><span class="ru">Посетить</span></a>
+        <a href="/archive/"><span class="en">Archive</span><span class="ru">Архив</span></a>
+        <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
+      </div>
+    </nav>
   </header>
-  <main class="page">
 
+  <main class="wrap">
     <section class="section">
-      <div id="news-detail"></div>
+      <div id="news-detail">
+        <article>
+          <figure class="figure" style="margin-bottom:2rem;">
+            <img src="/images/sites/ohel-founders-2.jpg" alt="The Lubavitch cemetery and Ohel" loading="lazy" />
+            <figcaption>
+              <span class="en">The restored Lubavitch cemetery — the heart of the heritage project. — Wikimedia Commons (CC BY-SA)</span>
+              <span class="ru">Восстановленное Любавичское кладбище — центр проекта по сохранению наследия. — Wikimedia Commons (CC BY-SA)</span>
+            </figcaption>
+          </figure>
+
+          <h4><span class="en">Project Announcement</span><span class="ru">Объявление о проекте</span></h4>
+          <h1>
+            <span class="en">Welcome to the Lubavitch Heritage Archive</span>
+            <span class="ru">Добро пожаловать в архив «Наследие Любавич»</span>
+          </h1>
+          <p class="lead">
+            <span class="en">This archive is dedicated to the documentation, preservation, and sharing of the history of Lubavitch — the village in Russia's Smolensk region that served as the heart of Chabad-Lubavitch for 102 years.</span>
+            <span class="ru">Этот архив посвящён документации, сохранению и распространению истории Любавича — посёлка в Смоленской области России, служившего центром Хабад-Любавич на протяжении 102 лет.</span>
+          </p>
+
+          <p>
+            <span class="en">The village of Lyubavichi — known in Jewish tradition as Lubavitch — was home to four generations of Chabad Rebbeim from 1813 to 1916. It gave its name to a movement that today spans over 100 countries. The Ohel of the Tzemach Tzedek and the Rebbe Maharash stands there. The original Tomchei Temimim yeshiva was founded there. The traces of a century of Chassidic life remain in the ground.</span>
+            <span class="ru">Посёлок Любавичи — известный в еврейской традиции как Любавич — был домом для четырёх поколений хабадских Ребеим с 1813 по 1916 год. Он дал своё имя движению, которое сегодня охватывает более 100 стран. Там стоит Оѓель Цемах Цедека и Ребе Магараша. Там была основана ешива Томхей Тмимим. В земле сохранились следы столетия хасидской жизни.</span>
+          </p>
+
+          <p>
+            <span class="en">This project brings together photographs, documents, historical records, and restoration reports from Lubavitch. It is built on the work of Rabbi Gavriel Gordon, the local Chabad emissary, and the Geder Avos organization, which has systematically documented and restored the cemetery.</span>
+            <span class="ru">Этот проект объединяет фотографии, документы, исторические записи и отчёты о реставрации из Любавича. Он основан на работе рава Гавриэля Гордона, местного шалиаха Хабада, и организации «Гедер Авот», которая систематически документирует и восстанавливает кладбище.</span>
+          </p>
+
+          <p>
+            <span class="en">If you have photographs, documents, family stories, or memories connected to Lubavitch, we invite you to contribute them to the archive. Every record matters.</span>
+            <span class="ru">Если у вас есть фотографии, документы, семейные истории или воспоминания, связанные с Любавичем, мы приглашаем вас внести их в архив. Каждая запись важна.</span>
+          </p>
+
+          <p style="margin-top:1.5rem;">
+            <a class="btn btn-fill" href="/archive/"><span class="en">Browse the Archive</span><span class="ru">Открыть архив</span></a>
+            &nbsp;
+            <a class="btn" href="/contact/"><span class="en">Submit Materials</span><span class="ru">Передать материалы</span></a>
+          </p>
+
+          <p class="page-note" style="margin-top:2rem;">
+            <span class="en">This is an independent historical and informational project. All factual details should be verified with official representatives before citation or publication.</span>
+            <span class="ru">Это независимый исторический и информационный проект. Все фактические данные следует проверять с официальными представителями перед цитированием.</span>
+          </p>
+        </article>
+      </div>
     </section>
   </main>
+
   <footer class="footer">
-    <div class="page footer-inner">
+    <div class="wrap">
       <div class="footer-grid">
         <div>
-          <h3>Lubavitch Heritage Restoration</h3>
-          <p>A respectful historical archive for Lubavitch / Lyubavichi and the ongoing work to preserve its sacred Jewish sites.</p>
+          <h3><span class="en">Lubavitch Heritage Restoration</span><span class="ru">Наследие Любавич</span></h3>
+          <p><span class="en">A historical archive and restoration chronicle for Lubavitch / Lyubavichi.</span><span class="ru">Историческая летопись и хроника реставрации Любавича / Любавичей.</span></p>
         </div>
         <div>
-          <h3>Quick links</h3>
-          <a href="/history/">History</a><br />
-          <a href="/restoration/">Restoration</a><br />
-          <a href="/gallery/">Gallery</a><br />
-          <a href="/contact/">Contact</a>
+          <h3><span class="en">Pages</span><span class="ru">Страницы</span></h3>
+          <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
+          <a href="/sacred-sites/"><span class="en">Sacred Sites</span><span class="ru">Святые места</span></a>
+          <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
+          <a href="/gallery/"><span class="en">Gallery</span><span class="ru">Галерея</span></a>
+          <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
         </div>
         <div>
-          <h3>Note</h3>
-          <p>This website is an independent historical and informational project. Historical details should be verified with official representatives before citation or publication.</p>
+          <h3><span class="en">Note</span><span class="ru">Примечание</span></h3>
+          <p><span class="en">Independent historical project. Verify facts before citation.</span><span class="ru">Независимый исторический проект. Проверяйте факты перед цитированием.</span></p>
         </div>
       </div>
-      <div class="footer-note">� Lubavitch Historical Archive Project</div>
+      <div class="footer-note"><span class="en">© Lubavitch Heritage Archive Project · Images: Wikimedia Commons (CC BY-SA) where indicated</span><span class="ru">© Проект «Архив наследия Любавич»</span></div>
     </div>
   </footer>
 </body>
 </html>
-

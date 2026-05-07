@@ -1,72 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <script defer src="/assets/js/main.js"></script>
-  <meta name="description" content="A catalog of Lubavitch sacred sites, including the Ohel of the Rebbeim, cemetery, Tomchei Temimim site, and other historic places." />
+  <meta name="description" content="A catalog of the sacred sites of Lubavitch — the Ohel of the Rebbeim, the cemetery, the Akeda Shul, the Schneerson House, and other historic places." />
   <title>Lubavitch Sacred Sites | Historic and Holy Places</title>
+  <script>(function(){var l=localStorage.getItem('lang')||'en';document.documentElement.dataset.lang=l;})();</script>
 </head>
-<body class="heritage-background" data-page="sacred-sites">
-  <header class="header" role="banner">
-    <div class="page header-inner">
-      <a class="brand" href="/">
-        <strong>Lubavitch Heritage</strong>
-        <small>Historic archive &amp; restoration project</small>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">Menu</button>
-      <nav id="site-navigation" role="navigation">
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/history/">History</a></li>
-          <li><a href="/the-rebbe/">The Rebbe</a></li>
-          <li><a href="/sacred-sites/">Sacred Sites</a></li>
-          <li><a href="/restoration/">Restoration</a></li>
-          <li><a href="/gallery/">Gallery</a></li>
-          <li><a href="/news/">News</a></li>
-          <li><a href="/visit/">Visit</a></li>
-          <li><a href="/archive/">Archive</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </nav>
+<body data-page="sacred-sites">
+  <div class="lang-bar">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
+  </div>
+  <header>
+    <div class="masthead">
+      <p class="masthead-eyebrow"><span class="en">Lyubavichi, Smolensk Region, Russia</span><span class="ru">Любавичи, Смоленская область, Россия</span></p>
+      <h1 class="masthead-title"><span class="en">Lubavitch Heritage</span><span class="ru">Наследие Любавич</span></h1>
+      <hr class="masthead-rule" />
+      <p class="masthead-tagline"><span class="en">Historic Archive &amp; Restoration Chronicle</span><span class="ru">Историческая летопись и проект реставрации</span></p>
     </div>
+    <nav class="navbar" role="navigation">
+      <button class="nav-toggle" aria-expanded="false"><span class="en">Menu</span><span class="ru">Меню</span></button>
+      <div class="navbar-inner">
+        <a href="/"><span class="en">Home</span><span class="ru">Главная</span></a>
+        <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
+        <a href="/the-rebbe/"><span class="en">The Rebbe</span><span class="ru">Ребе</span></a>
+        <a href="/sacred-sites/"><span class="en">Sacred Sites</span><span class="ru">Святые места</span></a>
+        <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
+        <a href="/gallery/"><span class="en">Gallery</span><span class="ru">Галерея</span></a>
+        <a href="/news/"><span class="en">News</span><span class="ru">Новости</span></a>
+        <a href="/visit/"><span class="en">Visit</span><span class="ru">Посетить</span></a>
+        <a href="/archive/"><span class="en">Archive</span><span class="ru">Архив</span></a>
+        <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
+      </div>
+    </nav>
   </header>
-  <main class="page">
 
-    <section class="section">
-      <div class="section-title"><h1>Sacred Sites of Lubavitch</h1></div>
-      <p class="section-intro">A respectful catalog of the historic places and living sites that remain at the center of Lubavitch heritage.</p>
+  <main>
+
+    <!-- Hero -->
+    <section class="section" style="border-bottom: 2px solid var(--ink, #1a1a1a); padding-bottom: 2rem; margin-bottom: 2rem;">
+      <div class="wrap">
+        <div class="section-hd">
+          <h2>
+            <span class="en">Sacred Sites of Lubavitch</span>
+            <span class="ru">Святые места Любавича</span>
+          </h2>
+        </div>
+        <p class="lead">
+          <span class="en">A respectful catalog of the historic places and living sites that remain at the center of Lubavitch heritage — from the Ohel of the Rebbeim to the restored Akeda Shul, the cemetery, and the Schneerson House.</span>
+          <span class="ru">Почтительный каталог исторических мест и действующих объектов, остающихся центром наследия Любавича — от Охела Ребе до восстановленной Акеда Шул, кладбища и Дома Шнеерсона.</span>
+        </p>
+      </div>
     </section>
+
+    <!-- Intro pullquote -->
     <section class="section">
-      <div id="sites-list" class="sites-grid"></div>
+      <div class="wrap">
+        <blockquote class="pullquote">
+          <span class="en">"In Lubavitch, the stones themselves carry memory. Every site is both a monument to what was and a living place of prayer and pilgrimage."</span>
+          <span class="ru">«В Любавичах сами камни хранят память. Каждое место — это и памятник прошлому, и живое место молитвы и паломничества.»</span>
+        </blockquote>
+      </div>
     </section>
-  </main>
-  <footer class="footer">
-    <div class="page footer-inner">
-      <div class="footer-grid">
+
+    <!-- The Ohel -->
+    <section class="section">
+      <div class="wrap col-2">
         <div>
-          <h3>Lubavitch Heritage Restoration</h3>
-          <p>A respectful historical archive for Lubavitch / Lyubavichi and the ongoing work to preserve its sacred Jewish sites.</p>
+          <figure class="figure">
+            <img src="/images/sites/ohel-founders-1.jpg" alt="The Ohel of the Tzemach Tzedek and Rebbe Maharash" loading="lazy" />
+            <figcaption>
+              <span class="en">The Ohel of the Tzemach Tzedek and Rebbe Maharash, rebuilt 1989, renovated 2023–2024. The primary pilgrimage site at Lubavitch. — Wikimedia Commons (CC BY-SA)</span>
+              <span class="ru">Охел Цемах Цедека и Ребе Махараша, восстановлен в 1989 году, отреставрирован в 2023–2024 годах. Главное место паломничества в Любавичах. — Wikimedia Commons (CC BY-SA)</span>
+            </figcaption>
+          </figure>
         </div>
         <div>
-          <h3>Quick links</h3>
-          <a href="/history/">History</a><br />
-          <a href="/restoration/">Restoration</a><br />
-          <a href="/gallery/">Gallery</a><br />
-          <a href="/contact/">Contact</a>
-        </div>
-        <div>
-          <h3>Note</h3>
-          <p>This website is an independent historical and informational project. Historical details should be verified with official representatives before citation or publication.</p>
+          <article class="article-card">
+            <h2><span class="en">The Ohel of the Rebbeim</span><span class="ru">Охел Ребе</span></h2>
+            <p>
+              <span class="en">The central sacred site of Lubavitch is the Ohel — the memorial structure over the graves of the Tzemach Tzedek (Rabbi Menachem Mendel Schneersohn, 1789–1866) and the Rebbe Maharash (Rabbi Shmuel Schneersohn, 1834–1882). The Ohel was first constructed after their burials, destroyed during the Soviet period, and rebuilt in 1989 following the opening of Russia. The most recent renovation was completed in 2023–2024.</span>
+              <span class="ru">Центральное священное место Любавичей — Охел, мемориальное сооружение над могилами Цемах Цедека (рабби Менахема Мендла Шнеерсона, 1789–1866) и Ребе Махараша (рабби Шмуэля Шнеерсона, 1834–1882). Охел был впервые возведён после их погребений, разрушен в советское время и восстановлен в 1989 году после открытия России. Последняя реставрация завершена в 2023–2024 годах.</span>
+            </p>
+            <p>
+              <span class="en">Thousands of pilgrims visit the Ohel each year — on yahrzeit dates, during the Jewish holiday season, and throughout the year. Visitors leave kvitlech (prayer notes), recite Tehillim, and connect to the spiritual legacy of Chabad's founding Rebbeim.</span>
+              <span class="ru">Тысячи паломников посещают Охел ежегодно — в дни яцрцайт, в период еврейских праздников и на протяжении всего года. Посетители оставляют квиттлах (записки с молитвами), читают Теилим и прикасаются к духовному наследию основателей Хабада.</span>
+            </p>
+          </article>
         </div>
       </div>
-      <div class="footer-note">� Lubavitch Historical Archive Project</div>
+    </section>
+
+    <!-- Cemetery -->
+    <section class="section">
+      <div class="wrap col-2">
+        <div>
+          <article class="article-card">
+            <h2><span class="en">The Lubavitch Cemetery</span><span class="ru">Любавичское кладбище</span></h2>
+            <p>
+              <span class="en">The historic Jewish cemetery of Lubavitch contains the Ohel, the graves of the Rebbeim, and the burial sites of generations of Jewish families who lived in Lyubavichi. During the Soviet period, the cemetery was largely neglected, with many matzeivos (headstones) toppled, buried, or destroyed.</span>
+              <span class="ru">Историческое еврейское кладбище Любавичей содержит Охел, могилы Ребе и места захоронения поколений еврейских семей, живших в Любавичах. В советский период кладбище было в значительной мере заброшено: многие мацевы (надгробия) опрокинуты, закопаны или уничтожены.</span>
+            </p>
+            <p>
+              <span class="en">Since 2018, a systematic restoration project led by Rabbi Gavriel Gordon in partnership with Geder Avos has uncovered and reinstalled over 200 matzeivos, compiled a comprehensive burial database accessible to researchers and descendants, and transformed the cemetery into a respectfully maintained sacred site.</span>
+              <span class="ru">С 2018 года систематический реставрационный проект под руководством рабби Гавриэля Гордона совместно с Гедер Авос обнаружил и восстановил более 200 мацев, составил подробную базу данных захоронений, доступную исследователям и потомкам, и превратил кладбище в достойно ухоженное священное место.</span>
+            </p>
+          </article>
+        </div>
+        <div>
+          <figure class="figure">
+            <img src="/images/sites/ohel-founders-2.jpg" alt="Lubavitch cemetery — restored matzeivos" loading="lazy" />
+            <figcaption>
+              <span class="en">Restored matzeivos at the Lubavitch cemetery. The restoration project has reinstalled over 200 headstones since 2018. — Wikimedia Commons (CC BY-SA)</span>
+              <span class="ru">Восстановленные мацевы на Любавичском кладбище. С 2018 года реставрационный проект восстановил более 200 надгробий. — Wikimedia Commons (CC BY-SA)</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Akeda Shul -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-hd">
+          <h2><span class="en">The Akeda Shul</span><span class="ru">Акеда Шул</span></h2>
+        </div>
+        <div class="col-2">
+          <div>
+            <p>
+              <span class="en">The Akeda Shul is the historic synagogue that once stood adjacent to the Ohel at the edge of the Lubavitch cemetery. In 1922, the sixth Rebbe, Rabbi Yosef Yitzchak Schneersohn, delivered the last Maamar (Chassidic discourse) by a Lubavitcher Rebbe in Russia from within this shul — a moment of profound historical and spiritual significance.</span>
+              <span class="ru">Акеда Шул — историческая синагога, некогда стоявшая рядом с Охелом у края Любавичского кладбища. В 1922 году шестой Ребе, рабби Йосеф Ицхак Шнеерсон, произнёс в ней последний Маамар (хасидскую речь) Любавичского Ребе в России — момент глубокого исторического и духовного значения.</span>
+            </p>
+            <p>
+              <span class="en">The shul was destroyed during the Soviet era. Its foundation was rediscovered during the 2018 restoration project. The Akeda Shul has been fully rebuilt with an Aron Kodesh, Bima, library, and prayer spaces, and is now in active use by visiting groups and pilgrims.</span>
+              <span class="ru">Синагога была разрушена в советское время. Её фундамент был вновь обнаружен в ходе реставрационного проекта 2018 года. Акеда Шул полностью восстановлена с Арон Кодеш, Бимой, библиотекой и молельными помещениями и сейчас активно используется приезжающими группами и паломниками.</span>
+            </p>
+          </div>
+          <div>
+            <article class="article-card">
+              <h3><span class="en">Historical Significance</span><span class="ru">Историческое значение</span></h3>
+              <p>
+                <span class="en">The Akeda Shul represents the last active connection between the Lubavitcher Rebbeim and their ancestral home. The 1922 Maamar delivered by the Frierdiker Rebbe here is considered the symbolic closing chapter of Chabad's presence in Russia — before the long exile and eventual worldwide expansion that followed.</span>
+                <span class="ru">Акеда Шул представляет последнюю живую связь между Любавичскими Ребе и их исторической родиной. Маамар 1922 года, произнесённый здесь Фриердикер Ребе, считается символическим завершающим эпизодом присутствия Хабада в России — перед долгим изгнанием и последующим всемирным распространением движения.</span>
+                </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rebbetzins Ohel & Schneerson House -->
+    <section class="section">
+      <div class="wrap col-2">
+        <article class="article-card">
+          <h3><span class="en">The Ohel of the Rebbetzins</span><span class="ru">Охел Ребецин</span></h3>
+          <p>
+            <span class="en">A dedicated Ohel structure was recently constructed over the resting places of the Rebbetzins — the wives and daughters of the Chabad Rebbeim — who for many years had been buried without a proper memorial structure. The construction was part of the major restoration project begun in 2018 and represents a long-overdue act of honor and recognition.</span>
+            <span class="ru">Специальное сооружение Охел было недавно возведено над местами захоронений Ребецин — жён и дочерей Ребе Хабада, — которые долгие годы были похоронены без надлежащего памятного сооружения. Строительство было частью крупного реставрационного проекта, начатого в 2018 году, и стало давно назревшим актом уважения и признания.</span>
+          </p>
+        </article>
+        <article class="article-card">
+          <h3><span class="en">The Schneerson House</span><span class="ru">Дом Шнеерсона</span></h3>
+          <p>
+            <span class="en">During the 1989 restoration initiative, a historic house in Lubavitch was purchased and officially registered in the name of the Lubavitcher Rebbe — Rabbi Menachem Mendel Schneerson — representing a symbolic reclamation of the village's Jewish heritage. The house serves as a landmark of connection between the worldwide Chabad community and its ancestral home.</span>
+            <span class="ru">В ходе реставрационной инициативы 1989 года исторический дом в Любавичах был куплен и официально зарегистрирован на имя Любавичского Ребе — рабби Менахема Мендла Шнеерсона — как символическое возвращение еврейского наследия посёлка. Дом служит памятником связи между мировым сообществом Хабада и его исторической родиной.</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Chatzer / Information Center -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-hd">
+          <h2><span class="en">The Chatzer — Rebbe's Courtyard</span><span class="ru">Хацер — двор Ребе</span></h2>
+        </div>
+        <p>
+          <span class="en">The Chatzer (courtyard) of the Rebbeim was the historic center of Chabad life in Lubavitch — a complex that included the Rebbe's residence, study halls, the main synagogue, and the homes of leading scholars and disciples. During the Soviet period, the buildings were demolished or repurposed. In 2008, the information center "Hatzer Raboteinu Nesieinu Belubavitch" opened on the historic site, offering visitors documentation and context for the history of the village and the Chabad court.</span>
+          <span class="ru">Хацер (двор) Ребе был историческим центром жизни Хабада в Любавичах — комплекс, включавший резиденцию Ребе, залы для учёбы, главную синагогу и дома ведущих учёных и учеников. В советский период здания были снесены или перепрофилированы. В 2008 году на историческом месте открылся информационный центр «Хацер Рабейну Несиейну Белюбавич», предлагающий посетителям документацию и контекст об истории посёлка и двора Хабада.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- JS-filled list -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-hd">
+          <h2><span class="en">Site Directory</span><span class="ru">Справочник мест</span></h2>
+          <p>
+            <span class="en">A complete listing of identified sacred and historic sites in and around Lyubavichi.</span>
+            <span class="ru">Полный список выявленных священных и исторических мест в Любавичах и их окрестностях.</span>
+          </p>
+        </div>
+        <div id="sites-list" class="sites-grid">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-panel">
+      <div class="wrap">
+        <h2><span class="en">Visit the Sacred Sites</span><span class="ru">Посетить святые места</span></h2>
+        <p>
+          <span class="en">All sites are accessible to visitors. The Ohel, cemetery, Akeda Shul, and Schneerson House are open throughout the year. Contact Rabbi Gavriel Gordon to arrange a guided visit or pilgrimage group.</span>
+          <span class="ru">Все места доступны для посетителей. Охел, кладбище, Акеда Шул и Дом Шнеерсона открыты круглый год. Свяжитесь с рабби Гавриэлем Гордоном для организации экскурсии или паломнической группы.</span>
+        </p>
+        <a class="btn btn-fill" href="/visit/"><span class="en">Plan a Visit</span><span class="ru">Запланировать визит</span></a>
+        <a class="btn" href="/restoration/"><span class="en">Restoration Work</span><span class="ru">Реставрационные работы</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h3><span class="en">Lubavitch Heritage Restoration</span><span class="ru">Наследие Любавич</span></h3>
+          <p><span class="en">A historical archive and restoration chronicle for Lubavitch / Lyubavichi — the Russian village that served as the seat of Chabad-Lubavitch for 102 years.</span><span class="ru">Историческая летопись и хроника реставрации Любавича / Любавичей — русского посёлка, служившего центром Хабад-Любавич на протяжении 102 лет.</span></p>
+        </div>
+        <div>
+          <h3><span class="en">Pages</span><span class="ru">Страницы</span></h3>
+          <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
+          <a href="/sacred-sites/"><span class="en">Sacred Sites</span><span class="ru">Святые места</span></a>
+          <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
+          <a href="/gallery/"><span class="en">Gallery</span><span class="ru">Галерея</span></a>
+          <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
+        </div>
+        <div>
+          <h3><span class="en">Note</span><span class="ru">Примечание</span></h3>
+          <p><span class="en">An independent historical project. Facts drawn from public sources. Verify before citation.</span><span class="ru">Независимый исторический проект. Данные взяты из открытых источников. Проверяйте перед цитированием.</span></p>
+        </div>
+      </div>
+      <div class="footer-note"><span class="en">© Lubavitch Heritage Archive Project · Images: Wikimedia Commons (CC BY-SA) where indicated</span><span class="ru">© Проект «Архив наследия Любавич» · Фото: Wikimedia Commons (CC BY-SA) там, где указано</span></div>
     </div>
   </footer>
 </body>
 </html>
-

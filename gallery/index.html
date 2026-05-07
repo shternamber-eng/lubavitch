@@ -1,83 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <script defer src="/assets/js/main.js"></script>
   <meta name="description" content="A photo gallery documenting the Ohel, cemetery, restoration work, historic buildings, and archival materials from Lubavitch." />
   <title>Lubavitch Photo Gallery | Ohel, Cemetery and Restoration Images</title>
+  <script>(function(){var l=localStorage.getItem('lang')||'en';document.documentElement.dataset.lang=l;})();</script>
 </head>
-<body class="heritage-background" data-page="gallery">
-  <header class="header" role="banner">
-    <div class="page header-inner">
-      <a class="brand" href="/">
-        <strong>Lubavitch Heritage</strong>
-        <small>Historic archive &amp; restoration project</small>
-      </a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="site-navigation">Menu</button>
-      <nav id="site-navigation" role="navigation">
-        <ul class="nav-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="/history/">History</a></li>
-          <li><a href="/the-rebbe/">The Rebbe</a></li>
-          <li><a href="/sacred-sites/">Sacred Sites</a></li>
-          <li><a href="/restoration/">Restoration</a></li>
-          <li><a href="/gallery/">Gallery</a></li>
-          <li><a href="/news/">News</a></li>
-          <li><a href="/visit/">Visit</a></li>
-          <li><a href="/archive/">Archive</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main class="page">
-
-    <section class="section">
-      <div class="section-title"><h1>Gallery</h1></div>
-      <p class="section-intro">A visual archive of Lubavitch, the sacred sites, the restoration work, and the historical landscape.</p>
-    </section>
-    <section class="section">
-      <div id="gallery-filters" class="filter-toolbar"></div>
-      <div id="gallery-grid" class="gallery-grid"></div>
-    </section>
-  </main>
-
-  <div class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image detail">
-    <div class="lightbox" style="position:relative;">
-      <button class="lightbox-close" aria-label="Close">✕</button>
-      <img src="" alt="" />
-      <h3></h3>
-      <p></p>
-      <small></small>
-    </div>
+<body data-page="gallery">
+  <div class="lang-bar">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ru">RU</button>
   </div>
-  <footer class="footer">
-    <div class="page footer-inner">
-      <div class="footer-grid">
-        <div>
-          <h3>Lubavitch Heritage Restoration</h3>
-          <p>A respectful historical archive for Lubavitch / Lyubavichi and the ongoing work to preserve its sacred Jewish sites.</p>
+  <header>
+    <div class="masthead">
+      <p class="masthead-eyebrow"><span class="en">Lyubavichi, Smolensk Region, Russia</span><span class="ru">Любавичи, Смоленская область, Россия</span></p>
+      <h1 class="masthead-title"><span class="en">Lubavitch Heritage</span><span class="ru">Наследие Любавич</span></h1>
+      <hr class="masthead-rule" />
+      <p class="masthead-tagline"><span class="en">Historic Archive &amp; Restoration Chronicle</span><span class="ru">Историческая летопись и проект реставрации</span></p>
+    </div>
+    <nav class="navbar" role="navigation">
+      <button class="nav-toggle" aria-expanded="false"><span class="en">Menu</span><span class="ru">Меню</span></button>
+      <div class="navbar-inner">
+        <a href="/"><span class="en">Home</span><span class="ru">Главная</span></a>
+        <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
+        <a href="/the-rebbe/"><span class="en">The Rebbe</span><span class="ru">Ребе</span></a>
+        <a href="/sacred-sites/"><span class="en">Sacred Sites</span><span class="ru">Святые места</span></a>
+        <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
+        <a href="/gallery/"><span class="en">Gallery</span><span class="ru">Галерея</span></a>
+        <a href="/news/"><span class="en">News</span><span class="ru">Новости</span></a>
+        <a href="/visit/"><span class="en">Visit</span><span class="ru">Посетить</span></a>
+        <a href="/archive/"><span class="en">Archive</span><span class="ru">Архив</span></a>
+        <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="section" style="border-bottom: 2px solid var(--ink, #1a1a1a); padding-bottom: 2rem; margin-bottom: 2rem;">
+      <div class="wrap">
+        <div class="section-hd">
+          <h2>
+            <span class="en">Photo Gallery</span>
+            <span class="ru">Фотогалерея</span>
+          </h2>
         </div>
-        <div>
-          <h3>Quick links</h3>
-          <a href="/history/">History</a><br />
-          <a href="/restoration/">Restoration</a><br />
-          <a href="/gallery/">Gallery</a><br />
-          <a href="/contact/">Contact</a>
+        <p class="lead">
+          <span class="en">A visual archive of Lubavitch — the sacred sites, the restoration work, portraits from history, and the landscape of the village. Select a category below to filter the collection.</span>
+          <span class="ru">Визуальный архив Любавичей — священные места, реставрационные работы, исторические портреты и пейзажи посёлка. Выберите категорию ниже для фильтрации коллекции.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Filters and gallery grid (JS-filled) -->
+    <section class="section">
+      <div class="wrap">
+        <div id="gallery-filters" class="filter-toolbar" role="group" aria-label="Gallery filters">
+          <!-- Populated by main.js -->
         </div>
-        <div>
-          <h3>Note</h3>
-          <p>This website is an independent historical and informational project. Historical details should be verified with official representatives before citation or publication.</p>
+        <div id="gallery-grid" class="gallery-grid" aria-live="polite">
+          <!-- Populated by main.js -->
         </div>
       </div>
-      <div class="footer-note">� Lubavitch Historical Archive Project</div>
+    </section>
+
+    <!-- Attribution note -->
+    <section class="section">
+      <div class="wrap">
+        <p style="font-size:0.875rem; color: var(--stone, #6b6b6b); border-top: 1px solid currentColor; padding-top: 1rem;">
+          <span class="en">All images used with attribution. Where indicated, photographs are sourced from Wikimedia Commons under CC BY-SA license. Historical images from public domain or credited sources.</span>
+          <span class="ru">Все изображения используются с указанием авторства. Там, где указано, фотографии получены с Wikimedia Commons по лицензии CC BY-SA. Исторические изображения из общественного достояния или с указанием источников.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-panel">
+      <div class="wrap">
+        <h2><span class="en">Share Your Photos</span><span class="ru">Поделитесь фотографиями</span></h2>
+        <p>
+          <span class="en">Do you have historical photographs or recent images from Lubavitch? We welcome contributions to the archive from researchers, descendants, and visitors. All submissions will be credited.</span>
+          <span class="ru">У вас есть исторические фотографии или недавние снимки из Любавичей? Мы приветствуем вклад в архив от исследователей, потомков и посетителей. Все материалы будут с указанием авторства.</span>
+        </p>
+        <a class="btn btn-fill" href="/contact/"><span class="en">Submit Images</span><span class="ru">Отправить изображения</span></a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox overlay -->
+  <div class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image detail">
+    <div class="lightbox">
+      <img src="" alt="" />
+      <div class="lightbox-body">
+        <h3></h3>
+        <p></p>
+        <small></small>
+      </div>
+      <button class="lightbox-close">Close / Закрыть</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h3><span class="en">Lubavitch Heritage Restoration</span><span class="ru">Наследие Любавич</span></h3>
+          <p><span class="en">A historical archive and restoration chronicle for Lubavitch / Lyubavichi — the Russian village that served as the seat of Chabad-Lubavitch for 102 years.</span><span class="ru">Историческая летопись и хроника реставрации Любавича / Любавичей — русского посёлка, служившего центром Хабад-Любавич на протяжении 102 лет.</span></p>
+        </div>
+        <div>
+          <h3><span class="en">Pages</span><span class="ru">Страницы</span></h3>
+          <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
+          <a href="/sacred-sites/"><span class="en">Sacred Sites</span><span class="ru">Святые места</span></a>
+          <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
+          <a href="/gallery/"><span class="en">Gallery</span><span class="ru">Галерея</span></a>
+          <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
+        </div>
+        <div>
+          <h3><span class="en">Note</span><span class="ru">Примечание</span></h3>
+          <p><span class="en">An independent historical project. Facts drawn from public sources. Verify before citation.</span><span class="ru">Независимый исторический проект. Данные взяты из открытых источников. Проверяйте перед цитированием.</span></p>
+        </div>
+      </div>
+      <div class="footer-note"><span class="en">© Lubavitch Heritage Archive Project · Images: Wikimedia Commons (CC BY-SA) where indicated</span><span class="ru">© Проект «Архив наследия Любавич» · Фото: Wikimedia Commons (CC BY-SA) там, где указано</span></div>
     </div>
   </footer>
 </body>
 </html>
-
