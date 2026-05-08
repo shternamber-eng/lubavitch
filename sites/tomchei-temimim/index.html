@@ -4,7 +4,9 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css" /><script defer src="/assets/js/main.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script defer src="/assets/js/main.js"></script>
   <meta name="description" content="Yeshivas Tomchei Temimim — founded in Lubavitch in 1897 by the Rebbe Rashab. The first yeshiva to unite Talmud and Chassidus. Now operating worldwide." />
   <title>Yeshivas Tomchei Temimim | Lubavitch Heritage</title>
   <script>(function(){var l=localStorage.getItem('lang')||'en';document.documentElement.dataset.lang=l;})();</script>
@@ -380,6 +382,16 @@
         <span class="en">From a single building in Lubavitch, Tomchei Temimim has grown into a worldwide network of yeshivos sharing one name, one educational philosophy, and one founding vision — rooted in the village where it all began in 1897.</span>
         <span class="ru">Из одного здания в Любавиче Томхей Тмимим выросла во всемирную сеть ешив, разделяющих одно название, одну образовательную философию и одно основополагающее видение — уходящих корнями в посёлок, где всё началось в 1897 году.</span>
       </p>
+
+      <!-- WORLD MAP -->
+      <div style="margin-bottom:2.5rem;">
+        <div id="yeshiva-map" style="height:500px;border:3px solid var(--border);"></div>
+        <p style="font-family:'Source Sans Pro',sans-serif;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.5rem;text-align:right;">
+          <span class="en">Major Tomchei Temimim locations worldwide · Click a marker for details</span>
+          <span class="ru">Основные расположения Томхей Тмимим в мире · Нажмите на маркер для деталей</span>
+        </p>
+      </div>
+
       <div class="col-3 ruled">
         <article class="article-card">
           <p class="dateline"><span class="en">North America</span><span class="ru">Северная Америка</span></p>
@@ -467,5 +479,116 @@
       </div>
     </div>
   </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+  (function () {
+    var map = L.map('yeshiva-map', {
+      scrollWheelZoom: false,
+      minZoom: 2,
+      maxZoom: 10
+    }).setView([30, 18], 2);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    /* Vintage sepia on tiles only, keeping markers sharp */
+    map.getPanes().tilePane.style.filter = 'sepia(0.65) contrast(0.82) brightness(1.08) saturate(0.25)';
+
+    var icon = L.divIcon({
+      className: '',
+      html: '<div style="width:11px;height:11px;background:#7a1a1a;border-radius:50%;border:2px solid #14100c;box-shadow:0 1px 3px rgba(0,0,0,0.4);"></div>',
+      iconSize: [11, 11],
+      iconAnchor: [5, 5],
+      popupAnchor: [0, -8]
+    });
+
+    var starIcon = L.divIcon({
+      className: '',
+      html: '<div style="width:14px;height:14px;background:#7d5e22;border-radius:50%;border:2px solid #14100c;box-shadow:0 1px 4px rgba(0,0,0,0.5);"></div>',
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+      popupAnchor: [0, -10]
+    });
+
+    var popupOpts = {
+      className: 'tomchei-popup',
+      maxWidth: 200
+    };
+
+    function m(lat, lng, name, note, isMain) {
+      L.marker([lat, lng], { icon: isMain ? starIcon : icon })
+        .addTo(map)
+        .bindPopup('<b style="font-family:Playfair Display,serif;font-size:0.95rem;">' + name + '</b>' +
+          (note ? '<br><span style="font-size:0.78rem;color:#6a5c4a;">' + note + '</span>' : ''),
+          popupOpts);
+    }
+
+    /* ── LUBAVITCH (origin) ── */
+    m(54.567, 32.133, 'Lubavitch, Russia', '🏛 Birthplace · Est. 1897', true);
+
+    /* ── NORTH AMERICA ── */
+    m(40.669, -73.943, 'Brooklyn, NY', '770 Eastern Parkway · World HQ', true);
+    m(34.052, -118.243, 'Los Angeles, CA', 'Tomchei Temimim – LA');
+    m(41.878, -87.630, 'Chicago, IL', 'Tomchei Temimim – Chicago');
+    m(25.774, -80.193, 'Miami, FL', 'Tomchei Temimim – Miami');
+    m(43.653, -79.383, 'Toronto, Canada', 'Tomchei Temimim – Toronto');
+    m(45.501, -73.567, 'Montreal, Canada', 'Tomchei Temimim – Montreal');
+
+    /* ── EUROPE ── */
+    m(51.560, -0.193, 'London (Golders Green)', 'Tomchei Temimim – London');
+    m(53.481, -2.243, 'Manchester, UK', 'Tomchei Temimim – Manchester');
+    m(48.857, 2.352,  'Paris, France', 'Tomchei Temimim – Paris', true);
+    m(51.219, 4.402,  'Antwerp, Belgium', 'Tomchei Temimim – Antwerp');
+    m(52.370, 4.895,  'Amsterdam, Netherlands', 'Tomchei Temimim – Amsterdam');
+    m(52.520, 13.405, 'Berlin, Germany', 'Tomchei Temimim – Berlin');
+    m(46.948, 7.447,  'Bern, Switzerland', 'Tomchei Temimim – Switzerland');
+    m(53.551, 9.993,  'Hamburg, Germany', 'Tomchei Temimim – Hamburg');
+    m(48.209, 16.373, 'Vienna, Austria', 'Tomchei Temimim – Vienna');
+
+    /* ── ISRAEL ── */
+    m(31.952, 34.896, 'Lod, Israel', 'Central Israeli Yeshiva', true);
+    m(31.978, 34.901, 'Kfar Chabad, Israel', 'Tomchei Temimim – Kfar Chabad', true);
+    m(31.768, 35.214, 'Jerusalem, Israel', 'Tomchei Temimim – Jerusalem');
+    m(32.065, 34.782, 'Tel Aviv, Israel', 'Tomchei Temimim – Tel Aviv');
+    m(32.965, 35.496, 'Tzfat, Israel', 'Tomchei Temimim – Tzfat');
+    m(32.794, 34.989, 'Haifa, Israel', 'Tomchei Temimim – Haifa');
+
+    /* ── RUSSIA / FORMER USSR ── */
+    m(55.756, 37.617, 'Moscow, Russia', 'Tomchei Temimim – Moscow', true);
+    m(59.931, 30.361, 'St. Petersburg, Russia', 'Tomchei Temimim – St. Petersburg');
+    m(48.465, 35.046, 'Dnipro, Ukraine', 'Tomchei Temimim – Dnipro');
+    m(50.450, 30.523, 'Kyiv, Ukraine', 'Tomchei Temimim – Kyiv');
+    m(53.900, 27.561, 'Minsk, Belarus', 'Tomchei Temimim – Minsk');
+    m(46.842, 29.648, 'Chisinau, Moldova', 'Tomchei Temimim – Moldova');
+
+    /* ── SOUTH AMERICA ── */
+    m(-34.604, -58.382, 'Buenos Aires, Argentina', 'Tomchei Temimim – Buenos Aires', true);
+    m(-23.551, -46.633, 'São Paulo, Brazil', 'Tomchei Temimim – São Paulo');
+    m(-22.907, -43.173, 'Rio de Janeiro, Brazil', 'Tomchei Temimim – Rio');
+    m(-34.901, -56.165, 'Montevideo, Uruguay', 'Tomchei Temimim – Uruguay');
+
+    /* ── AUSTRALIA ── */
+    m(-37.814, 144.963, 'Melbourne, Australia', 'Tomchei Temimim – Melbourne', true);
+    m(-33.869, 151.209, 'Sydney, Australia', 'Tomchei Temimim – Sydney');
+
+    /* ── AFRICA ── */
+    m(-26.204, 28.047, 'Johannesburg, S. Africa', 'Tomchei Temimim – Johannesburg');
+    m(-33.925, 18.424, 'Cape Town, S. Africa', 'Tomchei Temimim – Cape Town');
+    m(33.573, -7.590,  'Casablanca, Morocco', 'Tomchei Temimim – Morocco');
+
+    /* ── ASIA ── */
+    m(19.076, 72.878, 'Mumbai, India', 'Tomchei Temimim – India');
+    m(13.756, 100.502,'Bangkok, Thailand', 'Tomchei Temimim – Thailand');
+    m(32.085, 34.781, 'Tel Aviv', '');
+
+    /* Custom popup style */
+    var style = document.createElement('style');
+    style.textContent = '.tomchei-popup .leaflet-popup-content-wrapper { background: #f5f0e4; border: 2px solid #14100c; border-radius: 0; box-shadow: 3px 3px 0 rgba(20,16,12,0.18); font-family: "PT Serif", Georgia, serif; } .tomchei-popup .leaflet-popup-tip { background: #f5f0e4; }';
+    document.head.appendChild(style);
+  })();
+  </script>
 </body>
 </html>
