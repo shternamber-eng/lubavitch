@@ -5,12 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&family=Noto+Serif+Hebrew:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
   <script defer src="/assets/js/main.js"></script>
-  <meta name="description" content="Contact the Lubavitch Heritage Archive Project — for general inquiries, archive submissions, research, visit planning, and more." />
-  <title>Contact | Lubavitch Heritage Archive Project</title>
+  <meta name="description" content="Contact Rabbi Gavriel Gordon — responsible for the preservation of the holy Jewish places in the village of Lubavitch." />
+  <title>Contact | Lubavitch Heritage</title>
   <script>(function(){var l=localStorage.getItem('lang')||'en';document.documentElement.dataset.lang=l;})();</script>
+  <style>
+    .contact-card {
+      border: 3px solid var(--border);
+      padding: 2rem 2.25rem;
+      background: var(--paper);
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .contact-card-avatar {
+      width: 110px;
+      height: 110px;
+      flex-shrink: 0;
+      border: 2px solid var(--border);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Playfair Display", serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--muted);
+      letter-spacing: -0.02em;
+    }
+    .contact-card-body { flex: 1; min-width: 220px; }
+    .contact-card-name {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 0.2rem;
+    }
+    .contact-card-role {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.95rem;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.12s;
+    }
+    .contact-link:hover { color: var(--red); }
+    .contact-link-icon {
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      background: var(--bg);
+    }
+    .contact-link-label {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.1rem;
+    }
+    .contact-link-value {
+      font-size: 0.95rem;
+      line-height: 1.2;
+    }
+    .social-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 2px solid var(--border);
+      padding: 0.5rem 1rem;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background 0.12s, color 0.12s;
+    }
+    .social-btn:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .social-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+    @media (max-width: 560px) {
+      .contact-card { padding: 1.25rem; gap: 1.25rem; }
+      .contact-card-avatar { width: 72px; height: 72px; font-size: 1.5rem; }
+    }
+  </style>
 </head>
 <body data-page="contact">
   <div class="lang-bar">
@@ -36,123 +153,145 @@
         <a href="/news/"><span class="en">News</span><span class="ru">Новости</span></a>
         <a href="/visit/"><span class="en">Visit</span><span class="ru">Посетить</span></a>
         <a href="/archive/"><span class="en">Archive</span><span class="ru">Архив</span></a>
-        <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
+        <a href="/contact/" class="active-link"><span class="en">Contact</span><span class="ru">Контакт</span></a>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main class="wrap">
 
-    <!-- Section 1: Title & Intro -->
+    <!-- TITLE -->
     <section class="section">
-      <div class="wrap">
-        <div class="section-hd">
-          <h2>
-            <span class="en">Contact</span>
-            <span class="ru">Контакт</span>
+      <div class="section-hd">
+        <h2><span class="en">Contact</span><span class="ru">Контакт</span></h2>
+      </div>
+      <p class="lead">
+        <span class="en">If you have any questions about the history of Lubavitch, the restoration project, visiting the holy sites, or archival materials — you can write to Rabbi Gavriel Gordon, who is responsible for the preservation of the holy Jewish places in the village of Lubavitch.</span>
+        <span class="ru">Если у вас есть вопросы об истории Любавича, проекте реставрации, посещении святых мест или архивных материалах — вы можете написать раввину Гавриэлю Гордону, ответственному за сохранение святых еврейских мест в деревне Любавичи.</span>
+      </p>
+    </section>
+
+    <!-- CONTACT CARD -->
+    <section class="section">
+      <div class="contact-card">
+        <div class="contact-card-avatar">ГГ</div>
+        <div class="contact-card-body">
+          <h2 class="contact-card-name">
+            <span class="en">Rabbi Gavriel Gordon</span>
+            <span class="ru">Рабби Гавриэль Гордон</span>
           </h2>
+          <p class="contact-card-role">
+            <span class="en">Responsible for the preservation of holy Jewish places · Village of Lubavitch</span>
+            <span class="ru">Ответственный за сохранение святых еврейских мест · Деревня Любавичи</span>
+          </p>
+
+          <div class="contact-links">
+
+            <a class="contact-link" href="https://wa.me/79687700001">
+              <div class="contact-link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div>
+                <span class="contact-link-label">WhatsApp</span>
+                <span class="contact-link-value">+7 (968) 770-00-01</span>
+              </div>
+            </a>
+
+            <a class="contact-link" href="mailto:mylubavitch@gmail.com">
+              <div class="contact-link-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+              </div>
+              <div>
+                <span class="contact-link-label"><span class="en">Email</span><span class="ru">Эл. почта</span></span>
+                <span class="contact-link-value">mylubavitch@gmail.com</span>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Social media -->
+          <div class="social-row" style="margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border-light);">
+            <a class="social-btn" href="https://www.instagram.com/my_lubavitch_eng/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              Instagram
+            </a>
+            <a class="social-btn" href="https://www.facebook.com/mylubavitcheng" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+          </div>
         </div>
-        <p>
-          <span class="en">The Lubavitch Heritage Archive Project is an independent historical project based in Lubavitch (Lyubavichi), Smolensk Oblast, Russia. We welcome inquiries from researchers, pilgrims, descendants, journalists, and anyone with a connection to Lubavitch's history. Whether you have a question, historical material to share, or are planning a visit — we would be glad to hear from you.</span>
-          <span class="ru">Проект «Архив наследия Любавич» — независимый исторический проект, базирующийся в Любавичах, Смоленская область, Россия. Мы приветствуем запросы от исследователей, паломников, потомков, журналистов и всех, кто связан с историей Любавичей. Будь то вопрос, исторические материалы для передачи или планирование визита — мы будем рады услышать вас.</span>
-        </p>
       </div>
     </section>
 
-    <!-- Section 2: Project Info + Archive Submissions -->
+    <!-- ABOUT PROJECT + ARCHIVE -->
     <section class="section">
-      <div class="wrap">
+      <div class="col-2 ruled">
+        <div>
+          <h3><span class="en">About This Project</span><span class="ru">Об этом проекте</span></h3>
+          <p>
+            <span class="en">This is an independent historical and informational project documenting the history of Lubavitch / Lyubavichi and chronicling the ongoing restoration of its sacred Jewish sites — the Ohel of the Rebbeim, the historic cemetery, the restored Beis Midrash, and the Chatzer.</span>
+            <span class="ru">Это независимый исторический и информационный проект, документирующий историю Любавичей и ведущий хронику продолжающейся реставрации их святых еврейских мест — Охела Ребеим, исторического кладбища, восстановленного Бейт-Мидраша и Хацера.</span>
+          </p>
+          <p style="margin-top:0.75rem;">
+            <span class="en">All facts are drawn from public sources and should be verified with official representatives before citation or publication.</span>
+            <span class="ru">Все факты взяты из открытых источников и должны быть проверены у официальных представителей перед цитированием или публикацией.</span>
+          </p>
+        </div>
+        <div>
+          <h3><span class="en">Archive Submissions</span><span class="ru">Материалы для архива</span></h3>
+          <p>
+            <span class="en">If you have photographs, documents, family stories, maps, or oral memories connected to Lubavitch — we invite you to share them. Every fragment of preserved memory matters.</span>
+            <span class="ru">Если у вас есть фотографии, документы, семейные истории, карты или устные воспоминания, связанные с Любавичами — мы приглашаем вас поделиться ими. Каждый фрагмент сохранённой памяти важен.</span>
+          </p>
+          <p style="margin-top:0.75rem;">
+            <span class="en">Write to <a href="mailto:mylubavitch@gmail.com">mylubavitch@gmail.com</a> describing what you have, its approximate date, and its provenance.</span>
+            <span class="ru">Напишите на <a href="mailto:mylubavitch@gmail.com">mylubavitch@gmail.com</a>, описав, что именно у вас есть, примерную дату и происхождение материала.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="section">
+      <div class="section-hd">
+        <h2><span class="en">Send a Message</span><span class="ru">Написать сообщение</span></h2>
+      </div>
+      <form class="contact-form" action="mailto:mylubavitch@gmail.com" method="post" enctype="text/plain">
         <div class="col-2">
-
-          <article class="article-card">
-            <h3>
-              <span class="en">About This Project</span>
-              <span class="ru">Об этом проекте</span>
-            </h3>
-            <p>
-              <span class="en">This is an independent historical and informational project. It is not affiliated with any official Chabad organization or institution. All facts are drawn from public sources and should be verified with official representatives before citation or publication.</span>
-              <span class="ru">Это независимый исторический и информационный проект. Он не связан ни с какой официальной организацией или учреждением Хабада. Все факты взяты из открытых источников и должны быть проверены у официальных представителей перед цитированием или публикацией.</span>
-            </p>
-            <p>
-              <span class="en">The project documents the history of Lubavitch / Lyubavichi and chronicles the ongoing restoration of its sacred Jewish sites — the Ohel, cemetery, Akeda Shul, and Chatzer.</span>
-              <span class="ru">Проект документирует историю Любавичей и ведёт хронику продолжающейся реставрации их священных еврейских мест — Охела, кладбища, синагоги «Акеда» и Хацера.</span>
-            </p>
-          </article>
-
-          <article class="article-card">
-            <h3>
-              <span class="en">Archive Submissions</span>
-              <span class="ru">Материалы для архива</span>
-            </h3>
-            <p>
-              <span class="en">If you have photographs, documents, family stories, maps, oral memories, or research notes connected to Lubavitch, we invite you to share them with the archive. Every fragment of preserved memory matters. Materials may be submitted digitally via this form or by arrangement.</span>
-              <span class="ru">Если у вас есть фотографии, документы, семейные истории, карты, устные воспоминания или исследовательские записи, связанные с Любавичами, мы приглашаем вас поделиться ими с архивом. Каждый фрагмент сохранённой памяти важен. Материалы можно передать в цифровом виде через эту форму или по договорённости.</span>
-            </p>
-            <p>
-              <span class="en">Please describe what you have, its approximate date, and its provenance. The archive team will follow up to arrange proper handling and attribution.</span>
-              <span class="ru">Пожалуйста, опишите, что именно у вас есть, примерную дату и происхождение материала. Команда архива свяжется с вами для организации надлежащей обработки и атрибуции.</span>
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Section 3: Contact Form -->
-    <section class="section">
-      <div class="wrap">
-        <div class="section-hd">
-          <h2>
-            <span class="en">Send a Message</span>
-            <span class="ru">Отправить сообщение</span>
-          </h2>
-        </div>
-        <form class="contact-form" action="mailto:project@lubavitch-archive.org" method="post" enctype="text/plain">
-
-          <div class="col-2">
-            <label>
-              <span class="en">Full Name</span>
-              <span class="ru">Полное имя</span>
-              <input type="text" name="name" required autocomplete="name" />
-            </label>
-            <label>
-              <span class="en">Email Address</span>
-              <span class="ru">Адрес электронной почты</span>
-              <input type="email" name="email" required autocomplete="email" />
-            </label>
-          </div>
-
           <label>
-            <span class="en">Subject</span>
-            <span class="ru">Тема</span>
-            <select name="subject">
-              <option value="general"><span class="en">General inquiry</span></option>
-              <option value="archive"><span class="en">Archive submission</span></option>
-              <option value="research"><span class="en">Research</span></option>
-              <option value="visit"><span class="en">Visit planning</span></option>
-              <option value="other"><span class="en">Other</span></option>
-            </select>
+            <span class="en">Full Name</span><span class="ru">Полное имя</span>
+            <input type="text" name="name" required autocomplete="name" />
           </label>
-
           <label>
-            <span class="en">Message</span>
-            <span class="ru">Сообщение</span>
-            <textarea name="message" rows="7" placeholder="Write your message here…"></textarea>
+            <span class="en">Email Address</span><span class="ru">Адрес электронной почты</span>
+            <input type="email" name="email" required autocomplete="email" />
           </label>
-
-          <div class="form-actions">
-            <button class="btn btn-fill" type="submit">
-              <span class="en">Send Message</span>
-              <span class="ru">Отправить сообщение</span>
-            </button>
-          </div>
-
-        </form>
-        <p class="form-note">
-          <span class="en">This form uses your default email client. Alternatively, use the address above directly. Personal information is collected respectfully and not shared with third parties.</span>
-          <span class="ru">Эта форма использует вашу почтовую программу по умолчанию. Alternatively, вы можете написать напрямую по адресу выше. Личная информация собирается с уважением и не передаётся третьим лицам.</span>
-        </p>
-      </div>
+        </div>
+        <label>
+          <span class="en">Subject</span><span class="ru">Тема</span>
+          <select name="subject">
+            <option value="general"><span class="en">General inquiry / Общий вопрос</span></option>
+            <option value="visit"><span class="en">Visit planning / Планирование визита</span></option>
+            <option value="archive"><span class="en">Archive submission / Архивные материалы</span></option>
+            <option value="restoration"><span class="en">Restoration project / Проект реставрации</span></option>
+            <option value="other"><span class="en">Other / Другое</span></option>
+          </select>
+        </label>
+        <label>
+          <span class="en">Message</span><span class="ru">Сообщение</span>
+          <textarea name="message" rows="7"></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn btn-fill" type="submit">
+            <span class="en">Send Message</span><span class="ru">Отправить</span>
+          </button>
+          <span style="font-family:'Source Sans Pro',sans-serif;font-size:0.8rem;color:var(--muted);margin-left:1rem;">
+            <span class="en">or write directly: <a href="mailto:mylubavitch@gmail.com">mylubavitch@gmail.com</a></span>
+            <span class="ru">или напишите напрямую: <a href="mailto:mylubavitch@gmail.com">mylubavitch@gmail.com</a></span>
+          </span>
+        </div>
+      </form>
     </section>
 
   </main>
@@ -161,23 +300,36 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <h3><span class="en">Lubavitch Heritage Restoration</span><span class="ru">Наследие Любавич</span></h3>
-          <p><span class="en">A historical archive and restoration chronicle for Lubavitch / Lyubavichi — the Russian village that served as the seat of Chabad-Lubavitch for 102 years.</span><span class="ru">Историческая летопись и хроника реставрации Любавича / Любавичей — русского посёлка, служившего центром Хабад-Любавич на протяжении 102 лет.</span></p>
+          <h3><span class="en">Lubavitch Heritage</span><span class="ru">Наследие Любавич</span></h3>
+          <p><span class="en">Historical archive and restoration chronicle for Lubavitch / Lyubavichi, Russia.</span><span class="ru">Историческая летопись и хроника реставрации Любавичей, Россия.</span></p>
+          <div style="display:flex;gap:0.5rem;margin-top:0.75rem;">
+            <a href="https://www.instagram.com/my_lubavitch_eng/" target="_blank" rel="noopener" style="color:var(--muted);transition:color 0.12s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--muted)'">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/mylubavitcheng" target="_blank" rel="noopener" style="color:var(--muted);transition:color 0.12s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--muted)'">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
         </div>
         <div>
           <h3><span class="en">Pages</span><span class="ru">Страницы</span></h3>
           <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
           <a href="/sacred-sites/"><span class="en">Sacred Sites</span><span class="ru">Святые места</span></a>
           <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
-          <a href="/gallery/"><span class="en">Gallery</span><span class="ru">Галерея</span></a>
+          <a href="/visit/"><span class="en">Visit</span><span class="ru">Посетить</span></a>
           <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
         </div>
         <div>
-          <h3><span class="en">Note</span><span class="ru">Примечание</span></h3>
-          <p><span class="en">An independent historical project. Facts drawn from public sources. Verify before citation.</span><span class="ru">Независимый исторический проект. Данные взяты из открытых источников. Проверяйте перед цитированием.</span></p>
+          <h3><span class="en">Get in Touch</span><span class="ru">Связаться</span></h3>
+          <p><a href="mailto:mylubavitch@gmail.com">mylubavitch@gmail.com</a></p>
+          <p><a href="https://wa.me/79687700001">+7 (968) 770-00-01</a></p>
+          <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--muted);">
+            <span class="en">Rabbi Gavriel Gordon</span>
+            <span class="ru">Рав Гавриэль Гордон</span>
+          </p>
         </div>
       </div>
-      <div class="footer-note"><span class="en">© Lubavitch Heritage Archive Project · Images: Wikimedia Commons (CC BY-SA) where indicated</span><span class="ru">© Проект «Архив наследия Любавич» · Фото: Wikimedia Commons (CC BY-SA) там, где указано</span></div>
+      <div class="footer-note">© Lubavitch Heritage Archive Project</div>
     </div>
   </footer>
 </body>
