@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/main.js"></script>
+  <meta name="description" content="Become a Guardian of Lubavitch Heritage. Your name enters history. Your participation is eternal." />
+  <title>Guardians of Lubavitch Heritage | Lubavitch Heritage</title>
+  <script>(function(){var l=localStorage.getItem('lang')||'en';document.documentElement.dataset.lang=l;})();</script>
+  <style>
+    /* ── GUARDIANS PAGE STYLES ── */
+    .guardian-hero {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      border-bottom: 4px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .guardian-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(125, 94, 34, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .guardian-hero-eyebrow {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .guardian-hero h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      color: var(--paper);
+      max-width: 820px;
+      margin: 0 auto 1.25rem;
+    }
+    .guardian-hero-sub {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: rgba(245, 240, 228, 0.75);
+      max-width: 60ch;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .guardian-hero-rule {
+      width: 80px;
+      border: none;
+      border-top: 2px solid var(--gold);
+      margin: 0 auto 2.5rem;
+    }
+    .guardian-hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--paper);
+      border-color: var(--gold);
+      font-weight: 700;
+    }
+    .btn-gold:hover { background: #6a4f1a; border-color: #6a4f1a; color: var(--paper); }
+
+    /* ── CONCEPT BLOCK ── */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 3px solid var(--border);
+      margin-bottom: 0;
+    }
+    .concept-old {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 2rem 2.25rem;
+    }
+    .concept-new {
+      background: var(--paper);
+      padding: 2rem 2.25rem;
+    }
+    .concept-label {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      opacity: 0.6;
+    }
+    .concept-old .concept-label { color: var(--paper); }
+    .concept-new .concept-label { color: var(--muted); }
+    .concept-old h3 { color: var(--paper); font-family: "Playfair Display", serif; font-size: 1.15rem; margin-bottom: 0.75rem; }
+    .concept-new h3 { color: var(--ink); font-family: "Playfair Display", serif; font-size: 1.15rem; margin-bottom: 0.75rem; }
+    .concept-old p { color: rgba(245,240,228,0.72); font-size: 0.95rem; line-height: 1.7; }
+    .concept-new p { color: var(--ink-mid); font-size: 0.95rem; line-height: 1.7; }
+    .concept-tagline {
+      border: 3px solid var(--border);
+      border-top: none;
+      padding: 1.25rem 2.25rem;
+      background: rgba(125, 94, 34, 0.07);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--ink-mid);
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .concept-tagline strong { color: var(--ink); }
+    @media (max-width: 620px) {
+      .concept-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── EMOTIONAL REASONS ── */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .reason-card {
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--red);
+      padding: 1.5rem 1.75rem;
+      background: var(--paper);
+    }
+    .reason-icon {
+      font-size: 1.6rem;
+      margin-bottom: 0.6rem;
+      line-height: 1;
+    }
+    .reason-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .reason-card p { font-size: 0.92rem; color: var(--ink-mid); line-height: 1.7; margin: 0; }
+    @media (max-width: 620px) { .reasons-grid { grid-template-columns: 1fr; } }
+
+    /* ── DONATION TIERS ── */
+    .tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .tier-card {
+      border: 2px solid var(--border);
+      padding: 1.75rem 1.5rem;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      transition: box-shadow 0.15s;
+    }
+    .tier-card:hover { box-shadow: 4px 4px 0 var(--border); }
+    .tier-card.tier-featured {
+      border-color: var(--gold);
+      border-width: 3px;
+      background: rgba(125, 94, 34, 0.04);
+    }
+    .tier-card.tier-top {
+      border-color: var(--ink);
+      border-width: 3px;
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .tier-badge {
+      position: absolute;
+      top: -1px;
+      right: 1rem;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      background: var(--gold);
+      color: var(--paper);
+    }
+    .tier-amount {
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--red);
+      line-height: 1;
+    }
+    .tier-card.tier-top .tier-amount { color: var(--gold); }
+    .tier-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .tier-card.tier-top .tier-name { color: var(--paper); }
+    .tier-name-ru {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-top: -0.25rem;
+    }
+    .tier-card.tier-top .tier-name-ru { color: rgba(245,240,228,0.55); }
+    .tier-desc {
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .tier-card.tier-top .tier-desc { color: rgba(245,240,228,0.75); }
+    .tier-perks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-top: 1px solid var(--border-light);
+      padding-top: 0.75rem;
+    }
+    .tier-card.tier-top .tier-perks { border-top-color: rgba(245,240,228,0.2); }
+    .tier-perks li {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.75rem;
+      color: var(--muted);
+      padding: 0.2rem 0 0.2rem 1.1rem;
+      position: relative;
+    }
+    .tier-card.tier-top .tier-perks li { color: rgba(245,240,228,0.6); }
+    .tier-perks li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.72rem;
+    }
+    .tier-cta {
+      margin-top: auto;
+      display: inline-block;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      border: 1.5px solid var(--border);
+      color: var(--ink);
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.12s, color 0.12s;
+      cursor: pointer;
+      background: none;
+      width: 100%;
+    }
+    .tier-cta:hover { background: var(--ink); color: var(--paper); }
+    .tier-card.tier-top .tier-cta { border-color: var(--gold); color: var(--gold); }
+    .tier-card.tier-top .tier-cta:hover { background: var(--gold); color: var(--paper); }
+    @media (max-width: 860px) { .tiers-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .tiers-grid { grid-template-columns: 1fr; } }
+
+    /* ── RECOGNITION WALL ── */
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 2px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .recognition-item {
+      background: var(--paper);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+    .recognition-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .recognition-item h4 {
+      font-family: "Playfair Display", serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .recognition-item p { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin: 0; }
+    @media (max-width: 620px) { .recognition-grid { grid-template-columns: 1fr 1fr; } }
+
+    /* ── WALL OF NAMES ── */
+    .wall-of-names {
+      border: 3px solid var(--border);
+      padding: 2rem 2.25rem;
+      background: var(--paper);
+      text-align: center;
+    }
+    .wall-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+    }
+    .wall-subtitle {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .wall-names {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.5rem;
+      min-height: 80px;
+      align-items: center;
+    }
+    .wall-name {
+      font-family: "Playfair Display", serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--ink-mid);
+    }
+    .wall-empty {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* ── INQUIRY FORM ── */
+    .inquiry-form select,
+    .inquiry-form input,
+    .inquiry-form textarea {
+      width: 100%;
+      margin-top: 0.4rem;
+      display: block;
+    }
+    .inquiry-intro {
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.75;
+      max-width: 66ch;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body data-page="guardians">
+  <div class="lang-bar">
+  <div class="lang-bar-social">
+    <a class="lang-bar-soc-link" href="https://www.instagram.com/my_lubavitch_eng/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+    <a class="lang-bar-soc-link" href="https://www.facebook.com/mylubavitcheng" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+  </div>
+  <div><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="ru">RU</button></div>
+</div>
+  <header>
+    <div class="masthead">
+      <p class="masthead-eyebrow"><span class="en">Lyubavichi, Smolensk Region, Russia</span><span class="ru">Любавичи, Смоленская область, Россия</span></p>
+      <h1 class="masthead-title"><span class="en">Lubavitch Heritage</span><span class="ru">Наследие Любавич</span></h1>
+      <hr class="masthead-rule" />
+      <p class="masthead-tagline"><span class="en">Historic Archive &amp; Restoration Chronicle</span><span class="ru">Историческая летопись и проект реставрации</span></p>
+    </div>
+    <nav class="navbar" role="navigation"><button class="nav-toggle" aria-expanded="false"><span class="en">Menu</span><span class="ru">Меню</span></button>
+      <div class="navbar-inner">
+        <a href="/"><span class="en">Home</span><span class="ru">Главная</span></a>
+        <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
+        <a href="/the-rebbe/"><span class="en">The Rebbe</span><span class="ru">Ребе</span></a>
+        <a href="/sacred-sites/"><span class="en">Sacred Sites</span><span class="ru">Святые места</span></a>
+        <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
+        <a href="/gallery/"><span class="en">Gallery</span><span class="ru">Галерея</span></a>
+        <a href="/news/"><span class="en">News</span><span class="ru">Новости</span></a>
+        <a href="/visit/"><span class="en">Visit</span><span class="ru">Посетить</span></a>
+        <a href="/guardians/" class="active-link" style="color:var(--red);font-weight:700;"><span class="en">Guardians</span><span class="ru">Хранители</span></a>
+        <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="guardian-hero">
+    <p class="guardian-hero-eyebrow">
+      <span class="en">The Guardians of Lubavitch Heritage</span>
+      <span class="ru">Хранители Наследия Любавича</span>
+    </p>
+    <h1>
+      <span class="en">This is not a donation.<br>This is your place in history.</span>
+      <span class="ru">Это не пожертвование.<br>Это ваше место в истории.</span>
+    </h1>
+    <hr class="guardian-hero-rule" />
+    <p class="guardian-hero-sub">
+      <span class="en">Lubavitch is where Chabad was born. Where the Rebbeim lived and taught. Where the light of Chassidus first entered the world. Becoming a Guardian means your name enters that history — not as a donor, but as a builder of something eternal.</span>
+      <span class="ru">Любавич — место, где родился Хабад. Где жили и учили Ребеим. Откуда свет хасидизма впервые вошёл в мир. Стать Хранителем — значит вписать своё имя в эту историю. Не как донора, а как строителя чего-то вечного.</span>
+    </p>
+    <div class="guardian-hero-btns">
+      <a class="btn btn-gold" href="#tiers">
+        <span class="en">Choose Your Level</span><span class="ru">Выбрать уровень участия</span>
+      </a>
+      <a class="btn" href="#inquiry" style="border-color:rgba(245,240,228,0.5);color:var(--paper);">
+        <span class="en">Express Interest</span><span class="ru">Написать нам</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="wrap">
+
+    <!-- CONCEPT: NOT DONOR — GUARDIAN -->
+    <section class="section">
+      <div class="section-hd">
+        <h2><span class="en">Not a Donor — a Guardian</span><span class="ru">Не Донор — Хранитель</span></h2>
+      </div>
+      <div class="concept-grid">
+        <div class="concept-old">
+          <p class="concept-label"><span class="en">The old approach</span><span class="ru">Старый подход</span></p>
+          <h3><span class="en">"Help restore the building."</span><span class="ru">«Помогите восстановить объект.»</span></h3>
+          <p>
+            <span class="en">The donor sees themselves as a source of funding. The relationship is transactional, temporary. The connection ends when the cheque clears.</span>
+            <span class="ru">Донор воспринимает себя как источник финансирования. Связь — транзакционная, временная. Всё заканчивается, когда средства перечислены.</span>
+          </p>
+        </div>
+        <div class="concept-new">
+          <p class="concept-label"><span class="en">The new positioning</span><span class="ru">Новое позиционирование</span></p>
+          <h3><span class="en">"Become part of the revival of historic Lubavitch."</span><span class="ru">«Станьте частью возрождения исторического Любавича.»</span></h3>
+          <p>
+            <span class="en">The sponsor becomes not a donor, but a <strong>Guardian of Lubavitch Heritage</strong>. Their name enters history. Their family's participation is eternal — recorded in the place where Chabad was born.</span>
+            <span class="ru">Спонсор становится не донором, а <strong>Хранителем Наследия Любавича</strong>. Его имя входит в историю. Участие семьи — вечное, записанное в том месте, где родился Хабад.</span>
+          </p>
+        </div>
+      </div>
+      <p class="concept-tagline">
+        <span class="en"><strong>"If I participate — my name enters the history of Lubavitch."</strong></span>
+        <span class="ru"><strong>«Если я участвую — моё имя входит в историю Любавича.»</strong></span>
+      </p>
+    </section>
+
+    <!-- EMOTIONAL REASONS -->
+    <section class="section">
+      <div class="section-hd">
+        <h2><span class="en">Why People Become Guardians</span><span class="ru">Почему становятся Хранителями</span></h2>
+        <span class="section-label"><span class="en">Four reasons — one eternal act</span><span class="ru">Четыре причины — один вечный поступок</span></span>
+      </div>
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-icon">🕯</div>
+          <h3><span class="en">Memory of a Parent</span><span class="ru">Память о родителях</span></h3>
+          <p>
+            <span class="en">To immortalise the name of a father or mother in the walls of historic Lubavitch — a permanent prayer-memorial in the very place where Chassidic thought was born. There is no more meaningful zechus.</span>
+            <span class="ru">Увековечить имя отца или матери в стенах исторического Любавича — вечный молитвенный памятник в том самом месте, где родилась хасидская мысль. Нет более значимого зхута.</span>
+          </p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">👨‍👩‍👧‍👦</div>
+          <h3><span class="en">Legacy for Children</span><span class="ru">Наследие для детей</span></h3>
+          <p>
+            <span class="en">To give your children and grandchildren a share in the revival of the Jewish world — a priceless spiritual inheritance they will carry forever. The family name becomes part of the eternal chronicle of Lubavitch.</span>
+            <span class="ru">Подарить детям и внукам причастность к возрождению еврейского мира — бесценное духовное наследство, которое они будут нести вечно. Имя семьи становится частью вечной летописи Любавича.</span>
+          </p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">✡︎</div>
+          <h3><span class="en">Spiritual Connection</span><span class="ru">Духовная связь</span></h3>
+          <p>
+            <span class="en">Lubavitch is where Chassidic thought was born. Where the Rebbeim walked. Where everything began. Participation in its restoration is a personal bond with that source — a living connection to the roots of your faith.</span>
+            <span class="ru">Любавич — место, где родилась хасидская мысль. Где ходили Ребеим. Где всё началось. Участие в восстановлении — это личная связь с этим источником, живая нить к корням.</span>
+          </p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">📜</div>
+          <h3><span class="en">Family Name in History</span><span class="ru">Семейное имя в истории</span></h3>
+          <p>
+            <span class="en">A family plaque, a named room, a memorial stone — your family becomes part of the eternal chronicle of Lubavitch. Not as a footnote, but as a builder. Recorded in the place that will endure for generations.</span>
+            <span class="ru">Семейная табличка, именная комната, мемориальный камень — семья становится частью вечной летописи Любавича. Не сноской — строителем. Записанным в месте, которое простоит поколениями.</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIERS -->
+    <section class="section" id="tiers">
+      <div class="section-hd">
+        <h2><span class="en">Levels of Participation</span><span class="ru">Уровни участия</span></h2>
+        <span class="section-label"><span class="en">Every level is a degree of belonging to history</span><span class="ru">Каждый уровень — степень причастности к истории</span></span>
+      </div>
+      <div class="tiers-grid">
+
+        <!-- Tier 1 -->
+        <div class="tier-card">
+          <div class="tier-amount">$180 – $360</div>
+          <div class="tier-name"><span class="en">Friend of Lubavitch Heritage</span><span class="ru">Друг Наследия Любавича</span></div>
+          <div class="tier-name-ru"><span class="en">Entry level · First step</span><span class="ru">Первый шаг к сохранению наследия</span></div>
+          <div class="tier-desc">
+            <span class="en">The first step toward preserving Lubavitch. Your contribution joins thousands of others in restoring what was lost — and your name is recorded among those who chose to act.</span>
+            <span class="ru">Первый шаг к сохранению Любавича. Ваш вклад присоединяется к тысячам других в восстановлении утраченного — и ваше имя записывается среди тех, кто решил действовать.</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="en">Name in the Digital Chronicle</span><span class="ru">Имя в цифровой летописи</span></li>
+            <li><span class="en">Certificate of participation</span><span class="ru">Сертификат участника</span></li>
+            <li><span class="en">Project updates by email</span><span class="ru">Обновления проекта</span></li>
+          </ul>
+          <a class="tier-cta" href="#inquiry"><span class="en">Become a Friend</span><span class="ru">Стать Другом</span></a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="tier-card">
+          <div class="tier-amount">$770 – $1,800</div>
+          <div class="tier-name"><span class="en">Guardian of Restoration</span><span class="ru">Хранитель Реставрации</span></div>
+          <div class="tier-name-ru"><span class="en">Your contribution — in every restored stone</span><span class="ru">Ваш вклад — в каждом восстановленном камне</span></div>
+          <div class="tier-desc">
+            <span class="en">$770 — the address where Chabad found its home in America. Your gift at this level is woven into the physical fabric of the restoration. Something real in Lubavitch bears witness to your commitment.</span>
+            <span class="ru">$770 — адрес, где Хабад обрёл дом в Америке. Ваш вклад на этом уровне вплетён в физическую ткань реставрации. Что-то реальное в Любавиче свидетельствует о вашей причастности.</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="en">Name on the Heritage Wall</span><span class="ru">Имя на Стене Наследия</span></li>
+            <li><span class="en">Named brick / restoration element</span><span class="ru">Именной камень реставрации</span></li>
+            <li><span class="en">Photo report from the site</span><span class="ru">Фотоотчёт с места</span></li>
+          </ul>
+          <a class="tier-cta" href="#inquiry"><span class="en">Become a Guardian</span><span class="ru">Стать Хранителем</span></a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="tier-card tier-featured">
+          <span class="tier-badge"><span class="en">Popular</span><span class="ru">Популярный</span></span>
+          <div class="tier-amount">$3,600 – $7,700</div>
+          <div class="tier-name"><span class="en">Heritage Partner</span><span class="ru">Партнёр Наследия</span></div>
+          <div class="tier-name-ru"><span class="en">Named recognition · Family memory</span><span class="ru">Именное признание и семейная память</span></div>
+          <div class="tier-desc">
+            <span class="en">A named family plaque at a restored site. Your family's connection to Lubavitch is made permanent — visible to every pilgrim and visitor who comes to this place for generations to come.</span>
+            <span class="ru">Именная семейная табличка на восстановленном объекте. Связь вашей семьи с Любавичем становится постоянной — видимой каждому паломнику и посетителю, который придёт сюда на поколения вперёд.</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="en">Family plaque at a restored site</span><span class="ru">Семейная табличка на объекте</span></li>
+            <li><span class="en">Personal letter from Rabbi Gordon</span><span class="ru">Личное письмо от рав. Гордона</span></li>
+            <li><span class="en">Archive of Eternal Memory entry</span><span class="ru">Запись в Архив Вечной Памяти</span></li>
+          </ul>
+          <a class="tier-cta" href="#inquiry"><span class="en">Become a Partner</span><span class="ru">Стать Партнёром</span></a>
+        </div>
+
+        <!-- Tier 4 -->
+        <div class="tier-card">
+          <div class="tier-amount">$18,000</div>
+          <div class="tier-name"><span class="en">Guardian of Lubavitch</span><span class="ru">Хранитель Любавича</span></div>
+          <div class="tier-name-ru"><span class="en">Your name in history — forever</span><span class="ru">Имя в истории навсегда</span></div>
+          <div class="tier-desc">
+            <span class="en">$18,000 — chai times one thousand. At this level your name enters the permanent record of Lubavitch's restoration. You become a Halachic Guardian: one whose act of preservation is recorded in the history of the place itself.</span>
+            <span class="ru">$18,000 — хай, умноженный на тысячу. На этом уровне ваше имя входит в постоянную летопись восстановления Любавича. Вы становитесь Галахическим Хранителем: ваш поступок сохранения записан в истории самого места.</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="en">Named room or memorial element</span><span class="ru">Именная комната или элемент</span></li>
+            <li><span class="en">Permanent Heritage Wall inscription</span><span class="ru">Постоянная надпись на Стене Наследия</span></li>
+            <li><span class="en">Invitation to dedication ceremony</span><span class="ru">Приглашение на церемонию</span></li>
+          </ul>
+          <a class="tier-cta" href="#inquiry"><span class="en">Enquire Now</span><span class="ru">Написать нам</span></a>
+        </div>
+
+        <!-- Tier 5 -->
+        <div class="tier-card">
+          <div class="tier-amount">$36,000 – $72,000</div>
+          <div class="tier-name"><span class="en">Builder of Lubavitch</span><span class="ru">Строитель Любавича</span></div>
+          <div class="tier-name-ru"><span class="en">Builder of revival · Named object</span><span class="ru">Строитель возрождения · Именной объект</span></div>
+          <div class="tier-desc">
+            <span class="en">You are building something real. A named object in Lubavitch — a gate, a room, a section of the restored cemetery, an archival exhibition — bears your family's name as part of the physical fabric of the holy site.</span>
+            <span class="ru">Вы строите что-то реальное. Именной объект в Любавиче — ворота, комната, участок восстановленного кладбища, архивная экспозиция — несёт имя вашей семьи как часть физической ткани святого места.</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="en">Naming rights to a major element</span><span class="ru">Право именования объекта</span></li>
+            <li><span class="en">Founders Circle membership</span><span class="ru">Членство в Круге Основателей</span></li>
+            <li><span class="en">Dedicated ceremony &amp; documentation</span><span class="ru">Церемония и документация</span></li>
+          </ul>
+          <a class="tier-cta" href="#inquiry"><span class="en">Enquire Now</span><span class="ru">Написать нам</span></a>
+        </div>
+
+        <!-- Tier 6 -->
+        <div class="tier-card tier-top">
+          <div class="tier-amount">$100,000+</div>
+          <div class="tier-name"><span class="en">Founder of Revival</span><span class="ru">Основатель Возрождения</span></div>
+          <div class="tier-name-ru"><span class="en">Founders Circle · Eternal legacy</span><span class="ru">Круг Основателей · Вечное наследие</span></div>
+          <div class="tier-desc">
+            <span class="en">The Founders Circle. Your family becomes one of the founding pillars of the revival of Lubavitch — recorded permanently in the history of Chabad and the Jewish world. This is an act whose impact cannot be measured in dollars.</span>
+            <span class="ru">Круг Основателей. Ваша семья становится одним из основных столпов возрождения Любавича — навсегда вписанных в историю Хабада и еврейского мира. Это поступок, чьё значение не измерить в деньгах.</span>
+          </div>
+          <ul class="tier-perks">
+            <li><span class="en">Primary naming rights — major structure</span><span class="ru">Главное право именования объекта</span></li>
+            <li><span class="en">Founders Circle plaque at entrance</span><span class="ru">Табличка Круга Основателей</span></li>
+            <li><span class="en">Personal meeting with Rabbi Gordon</span><span class="ru">Личная встреча с рав. Гордоном</span></li>
+            <li><span class="en">Eternal Archive of family legacy</span><span class="ru">Вечный архив семейного наследия</span></li>
+          </ul>
+          <a class="tier-cta" href="#inquiry"><span class="en">Speak With Us Directly</span><span class="ru">Связаться напрямую</span></a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RECOGNITION SYSTEM -->
+    <section class="section">
+      <div class="section-hd">
+        <h2><span class="en">How Your Name Enters History</span><span class="ru">Как ваше имя входит в историю</span></h2>
+        <span class="section-label"><span class="en">The recognition system</span><span class="ru">Система признания</span></span>
+      </div>
+      <p style="font-style:italic;color:var(--muted);max-width:70ch;margin-bottom:1.75rem;font-size:0.92rem;">
+        <span class="en">Recognition should not look like advertising. It should look like a historical record — solemn, worthy and eternal.</span>
+        <span class="ru">Признание должно выглядеть не как реклама спонсора — а как историческая запись: торжественная, достойная и вечная.</span>
+      </p>
+      <div class="recognition-grid">
+        <div class="recognition-item">
+          <span class="recognition-icon">🏛</span>
+          <h4><span class="en">Wall of Heritage</span><span class="ru">Стена Наследия</span></h4>
+          <p><span class="en">Permanent wall of guardian names at the restored site</span><span class="ru">Вечная стена имён хранителей на объекте</span></p>
+        </div>
+        <div class="recognition-item">
+          <span class="recognition-icon">📋</span>
+          <h4><span class="en">Family Plaques</span><span class="ru">Семейные таблички</span></h4>
+          <p><span class="en">Named plaques on restored rooms, gates and structures</span><span class="ru">Именные таблички на восстановленных объектах</span></p>
+        </div>
+        <div class="recognition-item">
+          <span class="recognition-icon">📖</span>
+          <h4><span class="en">Digital Chronicle</span><span class="ru">Цифровая летопись</span></h4>
+          <p><span class="en">Permanent digital record of every Guardian and Builder</span><span class="ru">Постоянная цифровая летопись всех хранителей</span></p>
+        </div>
+        <div class="recognition-item">
+          <span class="recognition-icon">🕍</span>
+          <h4><span class="en">Archive of Eternal Memory</span><span class="ru">Архив Вечной Памяти</span></h4>
+          <p><span class="en">Family stories, names and dedications preserved in the Lubavitch archive</span><span class="ru">Семейные истории, имена и посвящения в архиве Любавича</span></p>
+        </div>
+      </div>
+
+      <!-- Wall of Names -->
+      <div class="wall-of-names">
+        <h3 class="wall-title"><span class="en">Guardians of Lubavitch Heritage</span><span class="ru">Хранители Наследия Любавича</span></h3>
+        <p class="wall-subtitle"><span class="en">Those who have chosen to become part of this history</span><span class="ru">Те, кто выбрал стать частью этой истории</span></p>
+        <div class="wall-names">
+          <span class="wall-empty">
+            <span class="en">The wall awaits its first Guardians. Will your name be among them?</span>
+            <span class="ru">Стена ждёт первых Хранителей. Будет ли ваше имя среди них?</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INQUIRY FORM -->
+    <section class="section" id="inquiry">
+      <div class="section-hd">
+        <h2><span class="en">I Want to Become a Guardian</span><span class="ru">Я хочу стать Хранителем</span></h2>
+      </div>
+      <p class="inquiry-intro">
+        <span class="en">Fill in the form below and Rabbi Gavriel Gordon will contact you personally. There is no obligation — only a conversation about how your participation can become part of the revival of Lubavitch.</span>
+        <span class="ru">Заполните форму ниже, и рабби Гавриэль Гордон свяжется с вами лично. Никаких обязательств — только разговор о том, как ваше участие может стать частью возрождения Любавича.</span>
+      </p>
+      <form class="contact-form inquiry-form" action="mailto:mylubavitch@gmail.com" method="post" enctype="text/plain">
+        <div class="col-2">
+          <label>
+            <span class="en">Full Name</span><span class="ru">Полное имя</span>
+            <input type="text" name="name" required />
+          </label>
+          <label>
+            <span class="en">Email</span><span class="ru">Эл. почта</span>
+            <input type="email" name="email" required />
+          </label>
+        </div>
+        <div class="col-2">
+          <label>
+            <span class="en">WhatsApp / Phone (optional)</span><span class="ru">WhatsApp / Телефон (необязательно)</span>
+            <input type="tel" name="phone" />
+          </label>
+          <label>
+            <span class="en">Level of Interest</span><span class="ru">Уровень участия</span>
+            <select name="level">
+              <option value="friend"><span class="en">$180–$360 · Friend of Lubavitch Heritage</span></option>
+              <option value="guardian-rest"><span class="en">$770–$1,800 · Guardian of Restoration</span></option>
+              <option value="partner"><span class="en">$3,600–$7,700 · Heritage Partner</span></option>
+              <option value="guardian-lub"><span class="en">$18,000 · Guardian of Lubavitch</span></option>
+              <option value="builder"><span class="en">$36,000–$72,000 · Builder of Lubavitch</span></option>
+              <option value="founder"><span class="en">$100,000+ · Founder of Revival</span></option>
+              <option value="discuss"><span class="en">I would like to discuss</span></option>
+            </select>
+          </label>
+        </div>
+        <label>
+          <span class="en">Dedication (optional) — in whose memory or honour would you like to participate?</span>
+          <span class="ru">Посвящение (необязательно) — в чью память или честь вы хотите участвовать?</span>
+          <input type="text" name="dedication" />
+        </label>
+        <label>
+          <span class="en">Message</span><span class="ru">Сообщение</span>
+          <textarea name="message" rows="5"></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn btn-fill" type="submit">
+            <span class="en">Send My Expression of Interest</span><span class="ru">Отправить заявку</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="pullquote" style="margin-top:3rem;">
+        <p>
+          <span class="en">"Restoring Lubavitch. Preserving Jewish history for generations."</span>
+          <span class="ru">«Восстанавливая Любавич. Сохраняя еврейскую историю для поколений.»</span>
+        </p>
+        <cite>
+          <span class="en">— Rabbi Gavriel Gordon · Lubavitch, Russia</span>
+          <span class="ru">— Рабби Гавриэль Гордон · Любавичи, Россия</span>
+        </cite>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h3><span class="en">Lubavitch Heritage</span><span class="ru">Наследие Любавич</span></h3>
+          <p><span class="en">Historical archive and restoration chronicle for Lubavitch / Lyubavichi, Russia.</span><span class="ru">Историческая летопись и хроника реставрации Любавичей, Россия.</span></p>
+        </div>
+        <div>
+          <h3><span class="en">Pages</span><span class="ru">Страницы</span></h3>
+          <a href="/history/"><span class="en">History</span><span class="ru">История</span></a>
+          <a href="/restoration/"><span class="en">Restoration</span><span class="ru">Реставрация</span></a>
+          <a href="/guardians/"><span class="en">Guardians</span><span class="ru">Хранители</span></a>
+          <a href="/contact/"><span class="en">Contact</span><span class="ru">Контакт</span></a>
+        </div>
+        <div>
+          <h3><span class="en">Get in Touch</span><span class="ru">Связаться</span></h3>
+          <p><a href="mailto:mylubavitch@gmail.com">mylubavitch@gmail.com</a></p>
+          <p><a href="https://wa.me/79687700001">+7 (968) 770-00-01</a></p>
+          <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--muted);">
+            <span class="en">Rabbi Gavriel Gordon</span>
+            <span class="ru">Рав Гавриэль Гордон</span>
+          </p>
+        </div>
+      </div>
+      <div class="footer-note">© Lubavitch Heritage Archive Project</div>
+    </div>
+  </footer>
+</body>
+</html>
